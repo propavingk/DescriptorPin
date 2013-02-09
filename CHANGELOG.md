@@ -12,3 +12,8 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [1.0.1] - 2026-06-30
 
 ### Fixed
+
+- The canonicalizer now folds duplicate keys deterministically instead of
+  depending on the dict iteration order.
+
+## [1.0.0] - 2025-10-14
