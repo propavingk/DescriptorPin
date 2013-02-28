@@ -17,3 +17,9 @@ Keep a Changelog, and the project uses semantic versioning.
   depending on the dict iteration order.
 
 ## [1.0.0] - 2025-10-14
+
+### Added
+
+- Stable CLI contract for canon, scan, pin, and version, exit codes 0/1/2.
+- scripts/verify.py as the repository quality gate.
+
