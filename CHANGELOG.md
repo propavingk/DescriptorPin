@@ -23,3 +23,8 @@ Keep a Changelog, and the project uses semantic versioning.
 - Stable CLI contract for canon, scan, pin, and version, exit codes 0/1/2.
 - scripts/verify.py as the repository quality gate.
 
+## [0.9.5] - 2024-03-27
+
+### Changed
+
+- Maintenance release: documentation pass and test hygiene.
