@@ -28,3 +28,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ### Changed
 
 - Maintenance release: documentation pass and test hygiene.
+
+## [0.9.0] - 2022-07-19
+
+### Added
+
+- Multi-inventory diff mode comparing two descriptor snapshots.
