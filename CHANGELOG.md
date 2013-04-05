@@ -34,3 +34,8 @@ Keep a Changelog, and the project uses semantic versioning.
 ### Added
 
 - Multi-inventory diff mode comparing two descriptor snapshots.
+- JSON output for the drift report.
+
+## [0.8.0] - 2020-12-01
+
+### Added
