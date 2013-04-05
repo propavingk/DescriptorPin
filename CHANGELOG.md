@@ -39,3 +39,8 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [0.8.0] - 2020-12-01
 
 ### Added
+
+- Drift view in the report, sorted by field path.
+- Shadow detection for pinned fields that no longer exist upstream.
+
+## [0.7.0] - 2019-04-16
