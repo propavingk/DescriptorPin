@@ -44,3 +44,9 @@ Keep a Changelog, and the project uses semantic versioning.
 - Shadow detection for pinned fields that no longer exist upstream.
 
 ## [0.7.0] - 2019-04-16
+
+### Added
+
+- Sample inventories and the verify gate.
+- Poison checks for values that break canonical folding.
+
