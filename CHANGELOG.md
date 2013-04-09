@@ -61,3 +61,8 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ### Added
 
+- Report renderer with stable field paths.
+- CLI entry point with subcommands.
+
+## [0.4.0] - 2016-11-07
+
