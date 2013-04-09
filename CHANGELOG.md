@@ -55,3 +55,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ### Added
 
 - Test suite covering canon, inventory, and the CLI.
+- Makefile targets for test and verify.
+
+## [0.5.0] - 2017-08-22
+
+### Added
+
