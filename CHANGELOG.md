@@ -50,3 +50,8 @@ Keep a Changelog, and the project uses semantic versioning.
 - Sample inventories and the verify gate.
 - Poison checks for values that break canonical folding.
 
+## [0.6.0] - 2018-10-03
+
+### Added
+
+- Test suite covering canon, inventory, and the CLI.
