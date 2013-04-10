@@ -2,3 +2,5 @@ cff-version: 1.2.0
 message: "If you use DescriptorPin, please cite it as below."
 title: "DescriptorPin: a defensive integrity monitor for MCP tool descriptors"
 abstract: >-
+  DescriptorPin pins a canonical hash of every Model Context Protocol tool
+  descriptor and reports silent mutation, cross-server name collisions,
