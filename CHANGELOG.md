@@ -66,3 +66,8 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ## [0.4.0] - 2016-11-07
 
+### Added
+
+- Shadow field detection in mutated inventories.
+
+## [0.3.0] - 2015-06-18
