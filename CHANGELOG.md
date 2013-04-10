@@ -71,3 +71,9 @@ Keep a Changelog, and the project uses semantic versioning.
 - Shadow field detection in mutated inventories.
 
 ## [0.3.0] - 2015-06-18
+
+### Added
+
+- Mutation checks for drifted descriptors.
+- Poison value detection.
+
