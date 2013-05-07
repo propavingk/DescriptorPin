@@ -8,3 +8,4 @@ abstract: >-
   scan. It detects and describes structural shapes; it does not claim to
   detect malice.
 type: software
+authors:
