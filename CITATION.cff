@@ -9,3 +9,4 @@ abstract: >-
   detect malice.
 type: software
 authors:
+  - name: "the DescriptorPin authors"
