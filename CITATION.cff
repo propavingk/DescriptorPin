@@ -6,3 +6,5 @@ abstract: >-
   descriptor and reports silent mutation, cross-server name collisions,
   instruction-shaped description text, and stdio transport risk on a later
   scan. It detects and describes structural shapes; it does not claim to
+  detect malice.
+type: software
