@@ -2,3 +2,5 @@
 # PYTHONPATH=src lets every target run against the source tree in place.
 
 PYTHON ?= python
+export PYTHONPATH := src
+
