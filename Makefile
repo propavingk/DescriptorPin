@@ -9,3 +9,5 @@ export PYTHONPATH := src
 .PHONY: help test verify run clean
 
 help: ## Show this help
+	@echo "DescriptorPin make targets:"
+	@echo "  make test    run the unittest suite"
