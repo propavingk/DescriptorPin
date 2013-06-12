@@ -13,3 +13,5 @@ help: ## Show this help
 	@echo "  make test    run the unittest suite"
 	@echo "  make verify  run the quality gate (scripts/verify.py)"
 	@echo "  make run     scan the mutated sample against the sample pin"
+	@echo "  make clean   remove caches and build artefacts"
+
