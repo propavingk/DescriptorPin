@@ -20,3 +20,5 @@ test: ## Run the test suite
 
 verify: ## Run the mechanical quality gate
 	$(PYTHON) scripts/verify.py
+
+run: ## Demonstrate a scan against the bundled samples
