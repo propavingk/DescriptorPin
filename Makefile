@@ -18,3 +18,5 @@ help: ## Show this help
 test: ## Run the test suite
 	$(PYTHON) -m unittest discover -s tests -v
 
+verify: ## Run the mechanical quality gate
+	$(PYTHON) scripts/verify.py
