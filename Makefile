@@ -22,3 +22,4 @@ verify: ## Run the mechanical quality gate
 	$(PYTHON) scripts/verify.py
 
 run: ## Demonstrate a scan against the bundled samples
+	$(PYTHON) -m DescriptorPin scan samples/inventory_mutated.json -p samples/pin.json
