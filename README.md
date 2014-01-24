@@ -27,3 +27,11 @@ name. Nothing in the protocol asks the client to notice when a description
 changes, when a second server starts exposing a tool with a name that is
 already trusted, or when a description stops documenting a tool and starts
 instructing the model that reads it.
+
+DescriptorPin treats the approved state as the anchor. It records a canonical
+hash for every tool descriptor at approval time, and on each later scan it
+reports the shapes that differ from that anchor. The output names fields and
+servers; it never returns a single opaque score.
+
+## What it checks
+
