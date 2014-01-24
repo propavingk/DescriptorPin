@@ -18,3 +18,12 @@ transport risk.*
 </div>
 
 ---
+
+## The descriptor trust problem
+
+A Model Context Protocol client reads a server's tool list and shows it to a
+person who approves it once. Every call after that approval resolves tools by
+name. Nothing in the protocol asks the client to notice when a description
+changes, when a second server starts exposing a tool with a name that is
+already trusted, or when a description stops documenting a tool and starts
+instructing the model that reads it.
