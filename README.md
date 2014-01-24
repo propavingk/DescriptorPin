@@ -35,3 +35,12 @@ servers; it never returns a single opaque score.
 
 ## What it checks
 
+| Property | Mechanism |
+|---|---|
+| A tool that was approved, then silently changed | Canonical hash per descriptor compared by `src/descriptorpin/mutation.py` against the pin written by `src/descriptorpin/pin.py` |
+| Two servers claiming the same bare tool name | Grouping across servers in `src/descriptorpin/shadow.py`, with the precedence risk stated |
+| Description text shaped like instructions to the model | Named structural signals with weights in `src/descriptorpin/poison.py` |
+| A server declared over stdio | Transport review in `src/descriptorpin/transport.py`, because a config entry can become command execution |
+| Hash churn from key order or whitespace | Deterministic serialisation in `src/descriptorpin/canon.py` so only value changes move the hash |
+| Stable, diffable reports | Line-oriented rendering in `src/descriptorpin/report.py`, no clock and no randomness |
+
