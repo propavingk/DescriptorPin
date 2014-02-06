@@ -44,3 +44,11 @@ servers; it never returns a single opaque score.
 | Hash churn from key order or whitespace | Deterministic serialisation in `src/descriptorpin/canon.py` so only value changes move the hash |
 | Stable, diffable reports | Line-oriented rendering in `src/descriptorpin/report.py`, no clock and no randomness |
 
+## Install
+
+```
+git clone https://github.com/propavingk/DescriptorPin
+cd DescriptorPin
+python -m unittest discover -s tests -v
+```
+
