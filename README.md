@@ -61,3 +61,11 @@ access anywhere in the code.
 python -m descriptorpin pin    samples/inventory_clean.json -o samples/pin.json
 python -m descriptorpin scan   samples/inventory_mutated.json -p samples/pin.json
 python -m descriptorpin diff   samples/inventory_mutated.json -p samples/pin.json
+python -m descriptorpin shadow samples/inventory_mutated.json
+python -m descriptorpin version
+```
+
+| Command | Reads | Reports |
+|---|---|---|
+| `pin` | one inventory | writes a pin file recording the approved descriptor state |
+| `scan` | a pin and an inventory | every finding class below |
