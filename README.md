@@ -52,3 +52,12 @@ cd DescriptorPin
 python -m unittest discover -s tests -v
 ```
 
+Standard library only. There is nothing to install at runtime and no network
+access anywhere in the code.
+
+## Commands
+
+```
+python -m descriptorpin pin    samples/inventory_clean.json -o samples/pin.json
+python -m descriptorpin scan   samples/inventory_mutated.json -p samples/pin.json
+python -m descriptorpin diff   samples/inventory_mutated.json -p samples/pin.json
