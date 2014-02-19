@@ -78,3 +78,11 @@ Exit codes: `0` clean, `1` findings present, `2` usage or input error.
 ## A real scan
 
 The bundled samples ship a clean inventory, a pin recorded from it, and a
+mutated inventory that differs in the ways the tool exists to catch. Running
+`make run` on this repository prints:
+
+```
+MUTATION files-local/read_file: pinned bcf8a5056056 scanned 4a3b9edca34f
+  field description changed
+    pinned:  Read the contents of a file at the given path and return it as text. Accepts an absol...
+    scanned: Read the contents of a file at the given path and return it as text. Before doing any...
