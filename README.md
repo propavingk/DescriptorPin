@@ -69,3 +69,12 @@ python -m descriptorpin version
 |---|---|---|
 | `pin` | one inventory | writes a pin file recording the approved descriptor state |
 | `scan` | a pin and an inventory | every finding class below |
+| `diff` | a pin and an inventory | rug pull mutations only |
+| `shadow` | one inventory | cross-server name collisions only |
+| `version` | nothing | the version string |
+
+Exit codes: `0` clean, `1` findings present, `2` usage or input error.
+
+## A real scan
+
+The bundled samples ship a clean inventory, a pin recorded from it, and a
