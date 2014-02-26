@@ -95,3 +95,11 @@ POISON files-local/read_file: score 8, 3 signals
   signal imperative_opener (weight 2): sentence opens with imperative 'do not'
 TRANSPORT helper-plugin: transport 'stdio' flagged, launched as a local subprocess from client config, so config can become command execution
 summary: 4 findings (1 mutation, 1 shadow, 1 poison, 1 transport)
+```
+
+One mutation, one shadow, one poison, one transport, each line naming the
+tool or server it concerns. The scan exits `1`.
+
+## Finding classes
+
+| Class | Shape it describes | First action |
