@@ -86,3 +86,12 @@ MUTATION files-local/read_file: pinned bcf8a5056056 scanned 4a3b9edca34f
   field description changed
     pinned:  Read the contents of a file at the given path and return it as text. Accepts an absol...
     scanned: Read the contents of a file at the given path and return it as text. Before doing any...
+ADDED helper-plugin/query: scanned 58db016359a0, not in pin
+SHADOW query: claimed by 2 servers (helper-plugin, search-index)
+  precedence risk: client resolution order decides the winner
+POISON files-local/read_file: score 8, 3 signals
+  signal concealment (weight 3): instructs to hide, conceal, or not disclose
+  signal priority_override (weight 3): asserts precedence over previous or other instructions
+  signal imperative_opener (weight 2): sentence opens with imperative 'do not'
+TRANSPORT helper-plugin: transport 'stdio' flagged, launched as a local subprocess from client config, so config can become command execution
+summary: 4 findings (1 mutation, 1 shadow, 1 poison, 1 transport)
