@@ -103,3 +103,12 @@ tool or server it concerns. The scan exits `1`.
 ## Finding classes
 
 | Class | Shape it describes | First action |
+|---|---|---|
+| MUTATION | A pinned tool whose canonical descriptor hash changed | Read the field diff, then re-approve or reject |
+| ADDED | A tool present in the inventory but absent from the pin | Approve it explicitly or remove the server |
+| SHADOW | One bare name claimed by two or more servers | Decide the resolution order or rename a tool |
+| POISON | Description text that fires one or more named instruction signals | Read the fired signals and judge the text |
+| TRANSPORT | A server declared over stdio | Treat the config entry as executable content |
+
+## The pin file
+
