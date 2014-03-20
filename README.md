@@ -112,3 +112,11 @@ tool or server it concerns. The scan exits `1`.
 
 ## The pin file
 
+`pin` records, per tool: the server-qualified key, the canonical descriptor
+hash, a truncated digest for reading, the canonical descriptor itself, and an
+approval record with the approver and their note. Keeping the canonical
+descriptor in the pin is what lets a later diff show the exact field that
+changed, instead of only reporting that something did.
+
+The pin is a plain JSON document. Commit it, review it in pull requests, and
+treat a change to it as a change to what the client trusts.
