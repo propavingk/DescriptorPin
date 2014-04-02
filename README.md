@@ -120,3 +120,12 @@ changed, instead of only reporting that something did.
 
 The pin is a plain JSON document. Commit it, review it in pull requests, and
 treat a change to it as a change to what the client trusts.
+
+## Canonicalisation
+
+Two servers can serialise the same descriptor with different key order or
+insignificant whitespace. `canon.py` folds those differences before hashing,
+so the pin does not churn on formatting and a real value change cannot hide
+behind reordering. The fold is deterministic: identical input produces
+byte-identical output, and the reports that follow sort deterministically too.
+
