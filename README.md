@@ -129,3 +129,11 @@ so the pin does not churn on formatting and a real value change cannot hide
 behind reordering. The fold is deterministic: identical input produces
 byte-identical output, and the reports that follow sort deterministically too.
 
+## Quality gate
+
+`scripts/verify.py` is the repository's mechanical gate. It checks the SVG
+assets, the em dash sweep, the README rules, and the label overlap rule in
+the assets. Run on this repository it prints:
+
+```
+check 1 svg-parses: OK (2 svg)
