@@ -137,3 +137,12 @@ the assets. Run on this repository it prints:
 
 ```
 check 1 svg-parses: OK (2 svg)
+check 2 no-filters: OK
+check 3 comment-hyphen: OK
+check 4 em-dash: OK
+check 5 pandoc-attr: OK
+check 6 marketing: OK
+check 7 svg-a11y: OK
+check 8 label-overlap: OK
+verify: 8 checks, 0 failures
+```
