@@ -146,3 +146,11 @@ check 7 svg-a11y: OK
 check 8 label-overlap: OK
 verify: 8 checks, 0 failures
 ```
+
+`make test` runs the unit suite, `make verify` runs the gate, `make run`
+reproduces the scan above against the samples.
+
+## Repository layout
+
+```
+descriptorpin/
