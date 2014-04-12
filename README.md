@@ -154,3 +154,11 @@ reproduces the scan above against the samples.
 
 ```
 descriptorpin/
+  src/descriptorpin/
+    canon.py          canonical descriptor serialisation
+    inventory.py      strict inventory parsing with usage-grade errors
+    pin.py            pin file writer and verifier with approval records
+    mutation.py       rug pull detection and field level diff
+    shadow.py         cross server name collision detection
+    poison.py         named structural instruction signals
+    transport.py      transport review, stdio flagged
