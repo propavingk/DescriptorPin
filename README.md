@@ -162,3 +162,12 @@ descriptorpin/
     shadow.py         cross server name collision detection
     poison.py         named structural instruction signals
     transport.py      transport review, stdio flagged
+    report.py         deterministic line oriented rendering
+    cli.py            subcommands, exit codes
+  samples/            clean inventory, mutated inventory, recorded pin
+  tests/              suite per module and for the CLI
+  scripts/verify.py   the eight check quality gate
+  docs/assets/        logo and drift diagram
+  Makefile            help, test, verify, run, clean
+```
+
