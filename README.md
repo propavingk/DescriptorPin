@@ -171,3 +171,11 @@ descriptorpin/
   Makefile            help, test, verify, run, clean
 ```
 
+## Why not hash the raw descriptor bytes
+
+Raw bytes move when key order moves, and a pin that churns on formatting is a
+pin nobody reads. Folding through a canonical form first keeps the hash
+sensitive to values and insensitive to serialisation.
+
+## Why not one poison score
+
