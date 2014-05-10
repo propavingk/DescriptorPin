@@ -4,3 +4,5 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "descriptorpin"
+version = "1.0.1"
+description = "Defensive integrity monitor for Model Context Protocol tool descriptors."
