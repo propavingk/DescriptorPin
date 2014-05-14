@@ -12,3 +12,5 @@ license = {text = "MIT"}
 authors = [{name = "DescriptorPin contributors"}]
 keywords = ["mcp", "security", "tool-poisoning", "integrity", "descriptor"]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
