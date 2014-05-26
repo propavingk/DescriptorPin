@@ -9,3 +9,8 @@ canon.py produces one deterministic byte string per descriptor so the hash
 in pin.py is stable against key order and insignificant whitespace, and
 sensitive only to the values that matter.
 """
+
+from __future__ import annotations
+
+import hashlib
+import json
