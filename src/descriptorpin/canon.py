@@ -14,3 +14,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from typing import Any, Mapping
+
+# The three descriptor fields that are pinned. Order here is the canonical
+# order used for serialisation, independent of the input order.
