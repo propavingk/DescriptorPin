@@ -22,3 +22,7 @@ DESCRIPTOR_FIELDS = ("name", "description", "input_schema")
 
 
 def _canonicalise(value: Any) -> Any:
+    """Return a value with all mappings key-sorted, recursively.
+
+    Strings are stripped of leading and trailing whitespace so that a
+    descriptor reformatted with extra indentation hashes identically. Inner
