@@ -18,3 +18,7 @@ from typing import Any, Mapping
 
 # The three descriptor fields that are pinned. Order here is the canonical
 # order used for serialisation, independent of the input order.
+DESCRIPTOR_FIELDS = ("name", "description", "input_schema")
+
+
+def _canonicalise(value: Any) -> Any:
