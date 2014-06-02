@@ -26,3 +26,7 @@ def _canonicalise(value: Any) -> Any:
 
     Strings are stripped of leading and trailing whitespace so that a
     descriptor reformatted with extra indentation hashes identically. Inner
+    whitespace is preserved because it can carry meaning in a description.
+    """
+    if isinstance(value, Mapping):
+        return {k: _canonicalise(value[k]) for k in sorted(value)}
