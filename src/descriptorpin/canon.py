@@ -30,3 +30,8 @@ def _canonicalise(value: Any) -> Any:
     """
     if isinstance(value, Mapping):
         return {k: _canonicalise(value[k]) for k in sorted(value)}
+    if isinstance(value, list):
+        return [_canonicalise(v) for v in value]
+    if isinstance(value, str):
+        return value.strip()
+    return value
