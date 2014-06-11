@@ -39,3 +39,7 @@ def _canonicalise(value: Any) -> Any:
 
 def canonical_descriptor(descriptor: Mapping[str, Any]) -> dict:
     """Reduce a descriptor to its three pinned fields, canonicalised.
+
+    Missing fields become their empty form (empty string, empty mapping) so
+    that a descriptor which omits a field hashes the same as one that sets
+    it empty. Unknown extra fields are dropped: they are not pinned.
