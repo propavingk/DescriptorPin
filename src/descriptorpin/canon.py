@@ -35,3 +35,7 @@ def _canonicalise(value: Any) -> Any:
     if isinstance(value, str):
         return value.strip()
     return value
+
+
+def canonical_descriptor(descriptor: Mapping[str, Any]) -> dict:
+    """Reduce a descriptor to its three pinned fields, canonicalised.
