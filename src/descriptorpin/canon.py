@@ -43,3 +43,7 @@ def canonical_descriptor(descriptor: Mapping[str, Any]) -> dict:
     Missing fields become their empty form (empty string, empty mapping) so
     that a descriptor which omits a field hashes the same as one that sets
     it empty. Unknown extra fields are dropped: they are not pinned.
+    """
+    return {
+        "name": _canonicalise(descriptor.get("name", "")),
+        "description": _canonicalise(descriptor.get("description", "")),
