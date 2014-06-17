@@ -47,3 +47,8 @@ def canonical_descriptor(descriptor: Mapping[str, Any]) -> dict:
     return {
         "name": _canonicalise(descriptor.get("name", "")),
         "description": _canonicalise(descriptor.get("description", "")),
+        "input_schema": _canonicalise(descriptor.get("input_schema", {})),
+    }
+
+
+def canonical_bytes(descriptor: Mapping[str, Any]) -> bytes:
