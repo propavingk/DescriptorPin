@@ -52,3 +52,7 @@ def canonical_descriptor(descriptor: Mapping[str, Any]) -> dict:
 
 
 def canonical_bytes(descriptor: Mapping[str, Any]) -> bytes:
+    """Serialise the canonical descriptor to deterministic UTF-8 bytes.
+
+    Uses sorted keys, no insignificant whitespace, and ensure_ascii=False so
+    that non-ASCII text is compared by its real code points rather than by an
