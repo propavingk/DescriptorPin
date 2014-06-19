@@ -60,3 +60,7 @@ def canonical_bytes(descriptor: Mapping[str, Any]) -> bytes:
     """
     canonical = canonical_descriptor(descriptor)
     return json.dumps(
+        canonical,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
