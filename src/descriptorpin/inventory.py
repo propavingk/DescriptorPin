@@ -15,3 +15,9 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
+from typing import Any
+
+
+class InventoryError(ValueError):
+    """Raised when an inventory document is malformed."""
+
