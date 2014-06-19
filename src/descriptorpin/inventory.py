@@ -9,3 +9,9 @@ The parser is strict about structure and forgiving about optional fields.
 It raises InventoryError with a specific message rather than letting a
 KeyError or TypeError escape, so the CLI can print a usage-grade message
 and exit 2.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass, field
