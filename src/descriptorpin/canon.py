@@ -56,3 +56,7 @@ def canonical_bytes(descriptor: Mapping[str, Any]) -> bytes:
 
     Uses sorted keys, no insignificant whitespace, and ensure_ascii=False so
     that non-ASCII text is compared by its real code points rather than by an
+    escaping that could differ between encoders.
+    """
+    canonical = canonical_descriptor(descriptor)
+    return json.dumps(
