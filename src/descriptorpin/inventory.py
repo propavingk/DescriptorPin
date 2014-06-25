@@ -21,3 +21,9 @@ from typing import Any
 class InventoryError(ValueError):
     """Raised when an inventory document is malformed."""
 
+
+@dataclass(frozen=True)
+class Tool:
+    """One tool descriptor as declared by a server."""
+
+    name: str
