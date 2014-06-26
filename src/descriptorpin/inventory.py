@@ -39,3 +39,9 @@ class Tool:
             "input_schema": self.input_schema,
         }
 
+
+@dataclass(frozen=True)
+class Server:
+    """One MCP server and the tools it exposes."""
+
+    name: str
