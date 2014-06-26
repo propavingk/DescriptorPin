@@ -33,3 +33,9 @@ class Tool:
 
     def descriptor(self) -> dict:
         """Return the three pinned fields as a plain mapping."""
+        return {
+            "name": self.name,
+            "description": self.description,
+            "input_schema": self.input_schema,
+        }
+
