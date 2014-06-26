@@ -27,3 +27,9 @@ class Tool:
     """One tool descriptor as declared by a server."""
 
     name: str
+    description: str
+    input_schema: dict
+    server: str
+
+    def descriptor(self) -> dict:
+        """Return the three pinned fields as a plain mapping."""
