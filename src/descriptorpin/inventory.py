@@ -45,3 +45,9 @@ class Server:
     """One MCP server and the tools it exposes."""
 
     name: str
+    transport: str
+    tools: tuple = field(default_factory=tuple)
+
+
+@dataclass(frozen=True)
+class Inventory:
