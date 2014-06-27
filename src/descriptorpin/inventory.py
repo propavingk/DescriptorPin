@@ -51,3 +51,9 @@ class Server:
 
 @dataclass(frozen=True)
 class Inventory:
+    """A parsed inventory: an ordered collection of servers."""
+
+    servers: tuple = field(default_factory=tuple)
+
+    def all_tools(self) -> list:
+        """Flatten every tool across every server, preserving order."""
