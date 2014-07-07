@@ -57,3 +57,9 @@ class Inventory:
 
     def all_tools(self) -> list:
         """Flatten every tool across every server, preserving order."""
+        out: list = []
+        for server in self.servers:
+            out.extend(server.tools)
+        return out
+
+    def tool_key(self, tool: Tool) -> str:
