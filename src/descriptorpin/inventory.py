@@ -69,3 +69,8 @@ class Inventory:
 
 def _require(condition: bool, message: str) -> None:
     if not condition:
+        raise InventoryError(message)
+
+
+def _parse_tool(raw: Any, server_name: str) -> Tool:
+    _require(isinstance(raw, dict), f"tool in server '{server_name}' is not an object")
