@@ -80,3 +80,9 @@ def _parse_tool(raw: Any, server_name: str) -> Tool:
     _require(isinstance(description, str), f"tool '{name}' description is not a string")
     schema = raw.get("input_schema", raw.get("inputSchema", {}))
     _require(isinstance(schema, dict), f"tool '{name}' input_schema is not an object")
+    return Tool(name=name, description=description, input_schema=schema, server=server_name)
+
+
+def _parse_server(raw: Any) -> Server:
+    _require(isinstance(raw, dict), "server entry is not an object")
+    name = raw.get("name")
