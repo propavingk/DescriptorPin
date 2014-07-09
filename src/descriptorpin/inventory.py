@@ -74,3 +74,9 @@ def _require(condition: bool, message: str) -> None:
 
 def _parse_tool(raw: Any, server_name: str) -> Tool:
     _require(isinstance(raw, dict), f"tool in server '{server_name}' is not an object")
+    name = raw.get("name")
+    _require(isinstance(name, str) and name != "", f"tool in server '{server_name}' has no name")
+    description = raw.get("description", "")
+    _require(isinstance(description, str), f"tool '{name}' description is not a string")
+    schema = raw.get("input_schema", raw.get("inputSchema", {}))
+    _require(isinstance(schema, dict), f"tool '{name}' input_schema is not an object")
