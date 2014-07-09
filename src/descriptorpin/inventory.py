@@ -63,3 +63,9 @@ class Inventory:
         return out
 
     def tool_key(self, tool: Tool) -> str:
+        """The pin key for a tool: server-qualified name."""
+        return f"{tool.server}/{tool.name}"
+
+
+def _require(condition: bool, message: str) -> None:
+    if not condition:
