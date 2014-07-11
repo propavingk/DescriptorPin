@@ -86,3 +86,9 @@ def _parse_tool(raw: Any, server_name: str) -> Tool:
 def _parse_server(raw: Any) -> Server:
     _require(isinstance(raw, dict), "server entry is not an object")
     name = raw.get("name")
+    _require(isinstance(name, str) and name != "", "server has no name")
+    transport = raw.get("transport", "unknown")
+    _require(isinstance(transport, str), f"server '{name}' transport is not a string")
+    raw_tools = raw.get("tools", [])
+    _require(isinstance(raw_tools, list), f"server '{name}' tools is not a list")
+    tools = tuple(_parse_tool(t, name) for t in raw_tools)
