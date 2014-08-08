@@ -179,3 +179,31 @@ sensitive to values and insensitive to serialisation.
 
 ## Why not one poison score
 
+A single number invites a threshold, and a threshold invites false comfort.
+`poison.py` reports which named signals fired, each with its own weight, and
+leaves the judgement to the reader. A heuristic can fire on innocent text and
+can miss a careful attacker; saying so is part of the output.
+
+## What DescriptorPin does not do
+
+- It does not contact the MCP server. It reads inventory files on disk, which
+  is why it runs in CI and on a laptop with no network.
+- It does not verify cryptographic signatures. Descriptor integrity here is
+  against the pin you approved, not against a signed publisher chain.
+- It does not classify intent. The signal and shape wording is deliberate:
+  the tool reports structure, and the reader judges.
+- It does not resolve shadowing by picking a winner. The collision is the
+  finding; the client's resolution order decides, and that order is often
+  undocumented.
+
+## Contributing
+
+One topic per commit, conventional prefixes, tests for behaviour changes, and
+no network access in the code. Run `make test` and `make verify` before a
+pull request. The suite is standard library `unittest` only.
+
+## License
+
+MIT. See `LICENSE`.
+
+<!-- draft note 46 -->
