@@ -92,3 +92,9 @@ def _parse_server(raw: Any) -> Server:
     raw_tools = raw.get("tools", [])
     _require(isinstance(raw_tools, list), f"server '{name}' tools is not a list")
     tools = tuple(_parse_tool(t, name) for t in raw_tools)
+    return Server(name=name, transport=transport, tools=tools)
+
+
+def parse_inventory(data: Any) -> Inventory:
+    """Parse a decoded JSON inventory document into an Inventory."""
+    _require(isinstance(data, dict), "inventory root is not an object")
