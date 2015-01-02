@@ -1,0 +1,16 @@
+"""The pin file: write and verify, with an approval record per tool.
+
+A pin file records the trusted state of an inventory at the moment an
+operator approved it. For every tool it stores the server-qualified key, the
+canonical descriptor hash, a truncated digest for human reading, the
+canonical descriptor itself, and an approval record naming who approved it
+and the note they left.
+
+The pin file is the anchor for rug pull detection: on a later scan, a tool
+whose descriptor hash no longer matches its pinned hash has silently
+mutated after being trusted. The stored canonical descriptor lets the diff
+show the reader exactly which field changed and to what, rather than only
+that a hash moved.
+
+Determinism: the pin file is written with sorted keys and a fixed indent so
+that pinning the same inventory twice produces byte-identical output and
