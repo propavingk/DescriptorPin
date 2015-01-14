@@ -14,3 +14,14 @@ that a hash moved.
 
 Determinism: the pin file is written with sorted keys and a fixed indent so
 that pinning the same inventory twice produces byte-identical output and
+diffs cleanly in git. The approval record is supplied by the caller, not
+read from the wall clock, so tests and reproducible builds stay stable.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
+from typing import Any
+
+from . import __version__
