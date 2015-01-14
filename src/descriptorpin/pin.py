@@ -25,3 +25,13 @@ from dataclasses import dataclass
 from typing import Any
 
 from . import __version__
+from .canon import canonical_descriptor, descriptor_hash, short_digest
+from .inventory import Inventory
+
+PIN_FORMAT = "descriptorpin/pin/1"
+
+
+@dataclass(frozen=True)
+class PinnedTool:
+    """One pinned tool: its key, hash, canonical descriptor, and approval."""
+
