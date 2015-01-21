@@ -35,3 +35,14 @@ PIN_FORMAT = "descriptorpin/pin/1"
 class PinnedTool:
     """One pinned tool: its key, hash, canonical descriptor, and approval."""
 
+    key: str
+    server: str
+    name: str
+    hash: str
+    descriptor: dict
+    approved_by: str
+    approved_note: str
+
+    def to_json(self) -> dict:
+        return {
+            "key": self.key,
