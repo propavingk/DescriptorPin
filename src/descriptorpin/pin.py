@@ -56,3 +56,14 @@ class PinnedTool:
         }
 
 
+@dataclass(frozen=True)
+class PinFile:
+    """A parsed pin file: format tag, tool version, and pinned tools."""
+
+    format: str
+    tool_version: str
+    tools: tuple
+
+    def by_key(self) -> dict:
+        return {t.key: t for t in self.tools}
+
