@@ -67,3 +67,13 @@ class PinFile:
     def by_key(self) -> dict:
         return {t.key: t for t in self.tools}
 
+    def to_json(self) -> dict:
+        return {
+            "format": self.format,
+            "tool_version": self.tool_version,
+            "tools": [t.to_json() for t in self.tools],
+        }
+
+
+class PinError(ValueError):
+    """Raised when a pin file is malformed."""
