@@ -46,3 +46,13 @@ class PinnedTool:
     def to_json(self) -> dict:
         return {
             "key": self.key,
+            "server": self.server,
+            "name": self.name,
+            "hash": self.hash,
+            "digest": short_digest(self.hash),
+            "descriptor": self.descriptor,
+            "approved_by": self.approved_by,
+            "approved_note": self.approved_note,
+        }
+
+
