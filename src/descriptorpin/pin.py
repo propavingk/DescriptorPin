@@ -130,3 +130,14 @@ def parse_pin(data: Any) -> PinFile:
     _require(fmt == PIN_FORMAT, f"unknown pin format: {fmt!r}")
     tool_version = data.get("tool_version", "unknown")
     raw_tools = data.get("tools")
+    _require(isinstance(raw_tools, list), "pin has no 'tools' list")
+    tools = []
+    for raw in raw_tools:
+        _require(isinstance(raw, dict), "pin tool entry is not an object")
+        for required in ("key", "server", "name", "hash"):
+            _require(required in raw, f"pin tool entry missing '{required}'")
+        descriptor = raw.get("descriptor")
+        if not isinstance(descriptor, dict):
+            # A pin without a stored descriptor still verifies by hash; the
+            # diff for such an entry can only report that the hash moved.
+            descriptor = {"name": raw["name"], "description": "", "input_schema": {}}
