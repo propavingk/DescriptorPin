@@ -120,3 +120,13 @@ def save_pin(pin: PinFile, path: str) -> None:
 
 
 def _require(condition: bool, message: str) -> None:
+    if not condition:
+        raise PinError(message)
+
+
+def parse_pin(data: Any) -> PinFile:
+    _require(isinstance(data, dict), "pin root is not an object")
+    fmt = data.get("format")
+    _require(fmt == PIN_FORMAT, f"unknown pin format: {fmt!r}")
+    tool_version = data.get("tool_version", "unknown")
+    raw_tools = data.get("tools")
