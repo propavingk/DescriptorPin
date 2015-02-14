@@ -109,3 +109,14 @@ def build_pin(
     return PinFile(format=PIN_FORMAT, tool_version=__version__, tools=tuple(pinned))
 
 
+def write_pin(pin: PinFile) -> str:
+    """Serialise a pin file to deterministic JSON text."""
+    return json.dumps(pin.to_json(), indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+
+
+def save_pin(pin: PinFile, path: str) -> None:
+    with open(path, "w", encoding="utf-8", newline="\n") as handle:
+        handle.write(write_pin(pin))
+
+
+def _require(condition: bool, message: str) -> None:
