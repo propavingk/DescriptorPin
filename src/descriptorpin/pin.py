@@ -98,3 +98,14 @@ def build_pin(
             PinnedTool(
                 key=key,
                 server=tool.server,
+                name=tool.name,
+                hash=descriptor_hash(descriptor),
+                descriptor=canonical_descriptor(descriptor),
+                approved_by=approved_by,
+                approved_note=approved_note,
+            )
+        )
+    pinned.sort(key=lambda t: t.key)
+    return PinFile(format=PIN_FORMAT, tool_version=__version__, tools=tuple(pinned))
+
+
