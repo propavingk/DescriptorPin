@@ -77,3 +77,14 @@ class PinFile:
 
 class PinError(ValueError):
     """Raised when a pin file is malformed."""
+
+
+def build_pin(
+    inventory: Inventory,
+    approved_by: str = "[UNSPECIFIED]",
+    approved_note: str = "",
+) -> PinFile:
+    """Build a pin file from an inventory.
+
+    The same approval record is applied to every tool in this pin. The
+    caller is responsible for a meaningful approver identity; the default is
