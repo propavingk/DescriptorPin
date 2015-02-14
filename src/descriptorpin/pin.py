@@ -88,3 +88,13 @@ def build_pin(
 
     The same approval record is applied to every tool in this pin. The
     caller is responsible for a meaningful approver identity; the default is
+    an explicit placeholder rather than an invented name.
+    """
+    pinned = []
+    for tool in inventory.all_tools():
+        key = inventory.tool_key(tool)
+        descriptor = tool.descriptor()
+        pinned.append(
+            PinnedTool(
+                key=key,
+                server=tool.server,
