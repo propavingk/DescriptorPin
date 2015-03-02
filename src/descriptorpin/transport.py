@@ -10,3 +10,9 @@ behaviour, so this is a design property rather than a bug with a coming fix.
 This module reports the transport of every server and marks stdio as a risk
 to be reviewed. It does not block or rate transports it cannot evaluate; an
 unknown transport is reported as unknown so the reader can look closer.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
