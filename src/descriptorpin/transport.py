@@ -16,3 +16,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .inventory import Inventory
+
+STDIO = "stdio"
+
+# Transports and a one-line note on why each is or is not flagged.
