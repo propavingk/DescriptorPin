@@ -27,3 +27,8 @@ _TRANSPORT_NOTES = {
         "become command execution"
     ),
     "http": "network transport, not a local subprocess launch",
+    "sse": "network transport over server-sent events, not a subprocess launch",
+    "websocket": "network transport, not a local subprocess launch",
+}
+
+
