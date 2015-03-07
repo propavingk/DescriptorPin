@@ -32,3 +32,9 @@ _TRANSPORT_NOTES = {
 }
 
 
+@dataclass(frozen=True)
+class TransportFinding:
+    """The transport of one server, and whether it is flagged."""
+
+    server: str
+    transport: str
