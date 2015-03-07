@@ -21,3 +21,9 @@ from .inventory import Inventory
 STDIO = "stdio"
 
 # Transports and a one-line note on why each is or is not flagged.
+_TRANSPORT_NOTES = {
+    "stdio": (
+        "launched as a local subprocess from client config, so config can "
+        "become command execution"
+    ),
+    "http": "network transport, not a local subprocess launch",
