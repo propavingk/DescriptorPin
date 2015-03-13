@@ -38,3 +38,9 @@ class TransportFinding:
 
     server: str
     transport: str
+    flagged: bool
+    note: str
+
+
+def assess(inventory: Inventory) -> list:
+    """Return a TransportFinding for every server, sorted by server name.
