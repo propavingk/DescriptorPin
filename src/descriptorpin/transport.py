@@ -44,3 +44,8 @@ class TransportFinding:
 
 def assess(inventory: Inventory) -> list:
     """Return a TransportFinding for every server, sorted by server name.
+
+    stdio is flagged. Any transport not in the known set is reported with a
+    note that it is unrecognised, and is not flagged, because the tool has
+    nothing honest to say about a transport it does not model.
+    """
