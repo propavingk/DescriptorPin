@@ -49,3 +49,9 @@ def assess(inventory: Inventory) -> list:
     note that it is unrecognised, and is not flagged, because the tool has
     nothing honest to say about a transport it does not model.
     """
+    findings = []
+    for server in inventory.servers:
+        transport = server.transport
+        flagged = transport == STDIO
+        if transport in _TRANSPORT_NOTES:
+            note = _TRANSPORT_NOTES[transport]
