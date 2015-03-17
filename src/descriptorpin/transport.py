@@ -55,3 +55,8 @@ def assess(inventory: Inventory) -> list:
         flagged = transport == STDIO
         if transport in _TRANSPORT_NOTES:
             note = _TRANSPORT_NOTES[transport]
+        else:
+            note = f"unrecognised transport '{transport}', not evaluated"
+        findings.append(
+            TransportFinding(
+                server=server.name,
