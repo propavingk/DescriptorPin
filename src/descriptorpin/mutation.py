@@ -32,3 +32,13 @@ MUTATED = "mutated"
 ADDED = "added"
 REMOVED = "removed"
 
+
+@dataclass(frozen=True)
+class FieldChange:
+    """One descriptor field that changed between pin and scan."""
+
+    field: str
+    pinned: str
+    scanned: str
+
+
