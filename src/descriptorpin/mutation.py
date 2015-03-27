@@ -23,3 +23,12 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 
+from .canon import canonical_descriptor, descriptor_hash, short_digest
+from .inventory import Inventory
+from .pin import PinFile
+
+MATCHED = "matched"
+MUTATED = "mutated"
+ADDED = "added"
+REMOVED = "removed"
+
