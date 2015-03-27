@@ -13,3 +13,13 @@ it reports one of:
   added     the tool is present now but was not in the pin
   removed   the tool was pinned but is absent now
 
+For a mutated tool it computes a field-level diff so the reader sees which
+of name, description, or input_schema changed, not just that something did.
+The diff never claims intent. It states which field changed.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
+
