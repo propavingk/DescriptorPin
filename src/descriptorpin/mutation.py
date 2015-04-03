@@ -71,3 +71,13 @@ def diff_descriptors(pinned_desc: dict, scanned_desc: dict) -> tuple:
                 FieldChange(
                     field=field_name,
                     pinned=_field_repr(a[field_name]),
+                    scanned=_field_repr(b[field_name]),
+                )
+            )
+    return tuple(changes)
+
+
+def compare(pin: PinFile, inventory: Inventory) -> list:
+    """Compare a scanned inventory against a pin, one ToolStatus per key.
+
+    Results are sorted by key so output is deterministic. A mutated tool
