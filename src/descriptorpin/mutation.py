@@ -42,3 +42,13 @@ class FieldChange:
     scanned: str
 
 
+@dataclass(frozen=True)
+class ToolStatus:
+    """The comparison result for one tool key."""
+
+    key: str
+    status: str
+    pinned_digest: str
+    scanned_digest: str
+    changes: tuple = ()
+
