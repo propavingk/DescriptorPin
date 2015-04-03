@@ -52,3 +52,12 @@ class ToolStatus:
     scanned_digest: str
     changes: tuple = ()
 
+
+def _field_repr(value: object) -> str:
+    """Render a field value for the diff. Schemas become compact JSON."""
+    if isinstance(value, str):
+        return value
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+
+
+def diff_descriptors(pinned_desc: dict, scanned_desc: dict) -> tuple:
