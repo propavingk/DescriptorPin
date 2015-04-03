@@ -61,3 +61,13 @@ def _field_repr(value: object) -> str:
 
 
 def diff_descriptors(pinned_desc: dict, scanned_desc: dict) -> tuple:
+    """Return the tuple of FieldChange between two canonical descriptors."""
+    a = canonical_descriptor(pinned_desc)
+    b = canonical_descriptor(scanned_desc)
+    changes = []
+    for field_name in ("name", "description", "input_schema"):
+        if a[field_name] != b[field_name]:
+            changes.append(
+                FieldChange(
+                    field=field_name,
+                    pinned=_field_repr(a[field_name]),
