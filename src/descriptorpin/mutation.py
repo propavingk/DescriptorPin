@@ -91,3 +91,12 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
         key = inventory.tool_key(tool)
         scanned_by_key[key] = descriptor_hash(tool.descriptor())
         scanned_desc_by_key[key] = tool.descriptor()
+
+    results = []
+    all_keys = set(pinned_by_key) | set(scanned_by_key)
+    for key in sorted(all_keys):
+        in_pin = key in pinned_by_key
+        in_scan = key in scanned_by_key
+        if in_pin and in_scan:
+            pinned_hash = pinned_by_key[key].hash
+            scanned_hash = scanned_by_key[key]
