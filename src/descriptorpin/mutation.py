@@ -81,3 +81,13 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
     """Compare a scanned inventory against a pin, one ToolStatus per key.
 
     Results are sorted by key so output is deterministic. A mutated tool
+    carries a field-level diff, which requires the current descriptor; the
+    diff is computed from the live inventory tool matched by key.
+    """
+    pinned_by_key = pin.by_key()
+    scanned_by_key = {}
+    scanned_desc_by_key = {}
+    for tool in inventory.all_tools():
+        key = inventory.tool_key(tool)
+        scanned_by_key[key] = descriptor_hash(tool.descriptor())
+        scanned_desc_by_key[key] = tool.descriptor()
