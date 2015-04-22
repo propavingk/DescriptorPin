@@ -110,3 +110,13 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
                     )
                 )
             else:
+                # A mutated tool: compute the field-level diff between the
+                # descriptor stored in the pin and the descriptor seen now.
+                # The pin retains the canonical descriptor precisely so this
+                # diff names the changed field and shows both values, rather
+                # than only reporting that the hash moved.
+                pinned_tool = pinned_by_key[key]
+                changes = diff_descriptors(
+                    pinned_tool.descriptor, scanned_desc_by_key[key]
+                )
+                results.append(
