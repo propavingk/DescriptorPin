@@ -100,3 +100,13 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
         if in_pin and in_scan:
             pinned_hash = pinned_by_key[key].hash
             scanned_hash = scanned_by_key[key]
+            if pinned_hash == scanned_hash:
+                results.append(
+                    ToolStatus(
+                        key=key,
+                        status=MATCHED,
+                        pinned_digest=short_digest(pinned_hash),
+                        scanned_digest=short_digest(scanned_hash),
+                    )
+                )
+            else:
