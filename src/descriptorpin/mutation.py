@@ -120,3 +120,12 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
                     pinned_tool.descriptor, scanned_desc_by_key[key]
                 )
                 results.append(
+                    ToolStatus(
+                        key=key,
+                        status=MUTATED,
+                        pinned_digest=short_digest(pinned_hash),
+                        scanned_digest=short_digest(scanned_hash),
+                        changes=changes,
+                    )
+                )
+        elif in_scan and not in_pin:
