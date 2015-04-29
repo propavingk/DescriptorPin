@@ -18,3 +18,15 @@ blocklist of known attacks:
   second_person_model    direct address to the model or assistant
   tool_reference         references to other tools by name-like tokens
   concealment            instructions to hide, ignore, or not mention
+  priority_override      language asserting precedence over other rules
+  hidden_channel         markers suggesting out-of-band or hidden content
+
+Each signal carries a small integer weight. The total is a score, not a
+probability, and is reported alongside the individual signals so a reader
+can disagree with the weighting.
+"""
+
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass
