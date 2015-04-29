@@ -30,3 +30,15 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+
+# One representative structural cue per signal family. These match the SHAPE
+# of instruction text, for example the imperative mood or second-person
+# address, not any specific attack string.
+
+# Imperative verbs that direct the READER's behaviour rather than describe
+# the tool. Documentation routinely opens with descriptive imperatives like
+# "Read", "List", "Run", or "Get", so those are deliberately excluded: they
+# describe what the tool does and would fire on almost every honest tool.
+# The verbs kept here try to steer the model, which is the poisoning shape.
+_IMPERATIVE_VERBS = (
+    "ignore",
