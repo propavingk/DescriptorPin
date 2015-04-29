@@ -42,3 +42,16 @@ from dataclasses import dataclass
 # The verbs kept here try to steer the model, which is the poisoning shape.
 _IMPERATIVE_VERBS = (
     "ignore",
+    "disregard",
+    "forget",
+    "override",
+    "always",
+    "never",
+    "do not",
+    "don't",
+    "make sure",
+    "ensure",
+    "remember to",
+    "be sure to",
+)
+
