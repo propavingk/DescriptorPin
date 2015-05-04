@@ -55,3 +55,15 @@ _IMPERATIVE_VERBS = (
     "be sure to",
 )
 
+_SECOND_PERSON_MODEL = re.compile(
+    r"\b(you|your)\b.{0,40}\b(assistant|model|ai|llm|agent|system)\b"
+    r"|\b(assistant|model|ai|llm|agent)\b.{0,20}\b(you|should|must)\b",
+    re.IGNORECASE,
+)
+
+_CONCEALMENT = re.compile(
+    r"\b(do not|don't|never)\b.{0,30}\b(mention|tell|reveal|disclose|show|inform)\b"
+    r"|\b(hide|conceal|keep secret|without (?:the )?user|silently)\b",
+    re.IGNORECASE,
+)
+
