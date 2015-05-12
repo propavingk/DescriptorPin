@@ -67,3 +67,15 @@ _CONCEALMENT = re.compile(
     re.IGNORECASE,
 )
 
+_PRIORITY_OVERRIDE = re.compile(
+    r"\b(ignore|disregard|override|supersede|takes? precedence|instead of)\b"
+    r".{0,30}\b(previous|prior|above|other|earlier|all)\b"
+    r"|\b(most important|highest priority|before (?:doing )?anything)\b",
+    re.IGNORECASE,
+)
+
+_HIDDEN_CHANNEL = re.compile(
+    r"<\s*(system|important|secret|instructions?)\s*>"
+    r"|\[\s*(system|important|instructions?)\s*\]"
+    r"|\b(the following instructions|out of band)\b",
+    re.IGNORECASE,
