@@ -79,3 +79,15 @@ _HIDDEN_CHANNEL = re.compile(
     r"|\[\s*(system|important|instructions?)\s*\]"
     r"|\b(the following instructions|out of band)\b",
     re.IGNORECASE,
+)
+
+# A tool-reference token looks like a snake_case or dotted identifier of the
+# kind tool names use, appearing where prose would not normally place one.
+_TOOL_REFERENCE = re.compile(
+    r"\b(tool|function)\s+[`\"']?[a-z][a-z0-9]*(?:[_.][a-z0-9]+)+"
+    r"|`[a-z][a-z0-9]*(?:[_.][a-z0-9]+)+`",
+    re.IGNORECASE,
+)
+
+_SENTENCE_SPLIT = re.compile(r"(?<=[.!?\n])\s+")
+
