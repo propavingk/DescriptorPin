@@ -91,3 +91,15 @@ _TOOL_REFERENCE = re.compile(
 
 _SENTENCE_SPLIT = re.compile(r"(?<=[.!?\n])\s+")
 
+
+@dataclass(frozen=True)
+class Signal:
+    """One structural signal that fired, with its weight and evidence."""
+
+    name: str
+    weight: int
+    detail: str
+
+
+def _imperative_opener(text: str) -> Signal | None:
+    for raw in _SENTENCE_SPLIT.split(text.strip()):
