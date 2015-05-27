@@ -103,3 +103,15 @@ class Signal:
 
 def _imperative_opener(text: str) -> Signal | None:
     for raw in _SENTENCE_SPLIT.split(text.strip()):
+        sentence = raw.strip().lower()
+        if not sentence:
+            continue
+        for verb in _IMPERATIVE_VERBS:
+            if sentence.startswith(verb + " ") or sentence == verb:
+                return Signal(
+                    name="imperative_opener",
+                    weight=2,
+                    detail=f"sentence opens with imperative '{verb}'",
+                )
+    return None
+
