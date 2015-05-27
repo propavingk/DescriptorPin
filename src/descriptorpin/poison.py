@@ -115,3 +115,15 @@ def _imperative_opener(text: str) -> Signal | None:
                 )
     return None
 
+
+def _second_person_model(text: str) -> Signal | None:
+    if _SECOND_PERSON_MODEL.search(text):
+        return Signal(
+            name="second_person_model",
+            weight=2,
+            detail="addresses the model or assistant in the second person",
+        )
+    return None
+
+
+def _tool_reference(text: str) -> Signal | None:
