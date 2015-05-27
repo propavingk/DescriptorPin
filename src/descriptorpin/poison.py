@@ -127,3 +127,15 @@ def _second_person_model(text: str) -> Signal | None:
 
 
 def _tool_reference(text: str) -> Signal | None:
+    if _TOOL_REFERENCE.search(text):
+        return Signal(
+            name="tool_reference",
+            weight=1,
+            detail="references another tool by an identifier-shaped token",
+        )
+    return None
+
+
+def _concealment(text: str) -> Signal | None:
+    if _CONCEALMENT.search(text):
+        return Signal(
