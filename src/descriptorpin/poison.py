@@ -164,3 +164,15 @@ def _hidden_channel(text: str) -> Signal | None:
             detail="contains markers suggesting an out-of-band instruction block",
         )
     return None
+
+
+_DETECTORS = (
+    _imperative_opener,
+    _second_person_model,
+    _tool_reference,
+    _concealment,
+    _priority_override,
+    _hidden_channel,
+)
+
+
