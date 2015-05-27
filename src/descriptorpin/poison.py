@@ -152,3 +152,15 @@ def _priority_override(text: str) -> Signal | None:
             name="priority_override",
             weight=3,
             detail="asserts precedence over previous or other instructions",
+        )
+    return None
+
+
+def _hidden_channel(text: str) -> Signal | None:
+    if _HIDDEN_CHANNEL.search(text):
+        return Signal(
+            name="hidden_channel",
+            weight=2,
+            detail="contains markers suggesting an out-of-band instruction block",
+        )
+    return None
