@@ -139,3 +139,16 @@ def _tool_reference(text: str) -> Signal | None:
 def _concealment(text: str) -> Signal | None:
     if _CONCEALMENT.search(text):
         return Signal(
+            name="concealment",
+            weight=3,
+            detail="instructs to hide, conceal, or not disclose",
+        )
+    return None
+
+
+def _priority_override(text: str) -> Signal | None:
+    if _PRIORITY_OVERRIDE.search(text):
+        return Signal(
+            name="priority_override",
+            weight=3,
+            detail="asserts precedence over previous or other instructions",
