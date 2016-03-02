@@ -129,3 +129,25 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
                     )
                 )
         elif in_scan and not in_pin:
+            results.append(
+                ToolStatus(
+                    key=key,
+                    status=ADDED,
+                    pinned_digest="",
+                    scanned_digest=short_digest(scanned_by_key[key]),
+                )
+            )
+        else:
+            results.append(
+                ToolStatus(
+                    key=key,
+                    status=REMOVED,
+                    pinned_digest=short_digest(pinned_by_key[key].hash),
+                    scanned_digest="",
+                )
+            )
+    return results
+
+
+def mutations(statuses: list) -> list:
+    """Filter a comparison to the mutated tools only."""
