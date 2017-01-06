@@ -16,3 +16,10 @@ collision and the servers involved and leaves the judgement to the reader.
 """
 
 from __future__ import annotations
+
+from collections import defaultdict
+from dataclasses import dataclass
+
+from .inventory import Inventory
+
+
