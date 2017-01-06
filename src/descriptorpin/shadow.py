@@ -10,3 +10,9 @@ shadow.py groups tools by bare name across all servers and reports every
 name claimed by two or more servers. It states which servers collide and
 notes precedence risk: the client's resolution order decides the winner,
 and that order is often undocumented, so the collision alone is the finding.
+
+The module does not decide which server is legitimate. It reports the
+collision and the servers involved and leaves the judgement to the reader.
+"""
+
+from __future__ import annotations
