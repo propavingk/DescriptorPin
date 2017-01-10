@@ -23,3 +23,9 @@ from dataclasses import dataclass
 from .inventory import Inventory
 
 
+@dataclass(frozen=True)
+class Collision:
+    """One tool name claimed by more than one server."""
+
+    name: str
+    servers: tuple
