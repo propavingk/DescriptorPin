@@ -36,3 +36,9 @@ class Collision:
 
 
 def collisions(inventory: Inventory) -> list:
+    """Return the sorted list of name collisions across servers.
+
+    A tool name appearing twice on the same server is not a cross-server
+    collision, so servers are de-duplicated per name before counting. The
+    result is sorted by name for deterministic output.
+    """
