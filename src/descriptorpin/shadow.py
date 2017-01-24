@@ -29,3 +29,10 @@ class Collision:
 
     name: str
     servers: tuple
+
+    @property
+    def count(self) -> int:
+        return len(self.servers)
+
+
+def collisions(inventory: Inventory) -> list:
