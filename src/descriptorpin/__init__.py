@@ -6,3 +6,5 @@ then on a later scan reports silent mutation (rug pull shape), cross-server
 name collisions (shadowing shape), instruction-shaped text in descriptions
 (poisoning shape), and stdio transport risk.
 
+The tool detects and describes structural shapes. It does not claim to
+detect malice.
