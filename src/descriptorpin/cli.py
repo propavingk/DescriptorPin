@@ -69,3 +69,16 @@ def _build_parser() -> argparse.ArgumentParser:
     p_shadow.add_argument("inventory", help="path to the inventory JSON file")
 
     sub.add_parser("version", help="print the version")
+    return parser
+
+
+def _cmd_pin(args) -> int:
+    inventory = load_inventory(args.inventory)
+    pin = build_pin(inventory, approved_by=args.approved_by, approved_note=args.note)
+    save_pin(pin, args.out)
+    print(f"pinned {len(pin.tools)} tools to {args.out}")
+    return EXIT_CLEAN
+
+
+def _cmd_scan(args) -> int:
+    pin = load_pin(args.pin)
