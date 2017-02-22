@@ -41,3 +41,17 @@ EXIT_USAGE = 2
 
 
 def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="descriptorpin",
+        description="Defensive integrity monitor for MCP tool descriptors.",
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p_pin = sub.add_parser("pin", help="write a pin file from an inventory")
+    p_pin.add_argument("inventory", help="path to the inventory JSON file")
+    p_pin.add_argument("-o", "--out", required=True, help="path to write the pin file")
+    p_pin.add_argument(
+        "--approved-by",
+        default="[UNSPECIFIED]",
+        help="approver identity recorded per tool",
+    )
