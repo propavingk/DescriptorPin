@@ -55,3 +55,17 @@ def _build_parser() -> argparse.ArgumentParser:
         default="[UNSPECIFIED]",
         help="approver identity recorded per tool",
     )
+    p_pin.add_argument("--note", default="", help="approval note recorded per tool")
+
+    p_scan = sub.add_parser("scan", help="report all finding classes")
+    p_scan.add_argument("inventory", help="path to the current inventory JSON file")
+    p_scan.add_argument("-p", "--pin", required=True, help="path to the pin file")
+
+    p_diff = sub.add_parser("diff", help="report rug pull mutations only")
+    p_diff.add_argument("inventory", help="path to the current inventory JSON file")
+    p_diff.add_argument("-p", "--pin", required=True, help="path to the pin file")
+
+    p_shadow = sub.add_parser("shadow", help="report cross-server name collisions only")
+    p_shadow.add_argument("inventory", help="path to the inventory JSON file")
+
+    sub.add_parser("version", help="print the version")
