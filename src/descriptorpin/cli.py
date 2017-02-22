@@ -28,3 +28,16 @@ from .report import (
     render_added_removed,
     render_mutations,
     render_poison,
+    render_shadows,
+    render_transports,
+    summary_line,
+)
+from .shadow import collisions
+from .transport import assess
+
+EXIT_CLEAN = 0
+EXIT_FINDINGS = 1
+EXIT_USAGE = 2
+
+
+def _build_parser() -> argparse.ArgumentParser:
