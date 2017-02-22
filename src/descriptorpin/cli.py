@@ -82,3 +82,17 @@ def _cmd_pin(args) -> int:
 
 def _cmd_scan(args) -> int:
     pin = load_pin(args.pin)
+    inventory = load_inventory(args.inventory)
+
+    statuses = compare(pin, inventory)
+    shadow_items = collisions(inventory)
+    poison_named = [
+        (inventory.tool_key(t), analyse(t.description)) for t in inventory.all_tools()
+    ]
+    poison_named = [(k, r) for k, r in poison_named if r.fired]
+    transports = assess(inventory)
+
+    lines = []
+    lines += render_mutations(statuses)
+    lines += render_added_removed(statuses)
+    lines += render_shadows(shadow_items)
