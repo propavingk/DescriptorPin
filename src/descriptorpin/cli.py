@@ -96,3 +96,16 @@ def _cmd_scan(args) -> int:
     lines += render_mutations(statuses)
     lines += render_added_removed(statuses)
     lines += render_shadows(shadow_items)
+    lines += render_poison(poison_named)
+    lines += render_transports(transports)
+
+    mutation_count = sum(1 for s in statuses if s.status == MUTATED)
+    transport_flagged = sum(1 for t in transports if t.flagged)
+    for line in lines:
+        print(line)
+    print(
+        summary_line(
+            mutation_count,
+            len(shadow_items),
+            len(poison_named),
+            transport_flagged,
