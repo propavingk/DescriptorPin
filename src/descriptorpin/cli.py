@@ -109,3 +109,17 @@ def _cmd_scan(args) -> int:
             len(shadow_items),
             len(poison_named),
             transport_flagged,
+        )
+    )
+
+    findings = mutation_count + len(shadow_items) + len(poison_named) + transport_flagged
+    return EXIT_FINDINGS if findings else EXIT_CLEAN
+
+
+def _cmd_diff(args) -> int:
+    pin = load_pin(args.pin)
+    inventory = load_inventory(args.inventory)
+    statuses = compare(pin, inventory)
+    lines = render_mutations(statuses) + render_added_removed(statuses)
+    for line in lines:
+        print(line)
