@@ -123,3 +123,17 @@ def _cmd_diff(args) -> int:
     lines = render_mutations(statuses) + render_added_removed(statuses)
     for line in lines:
         print(line)
+    mutation_count = sum(1 for s in statuses if s.status == MUTATED)
+    print(f"diff: {mutation_count} mutations")
+    return EXIT_FINDINGS if mutation_count else EXIT_CLEAN
+
+
+def _cmd_shadow(args) -> int:
+    inventory = load_inventory(args.inventory)
+    shadow_items = collisions(inventory)
+    for line in render_shadows(shadow_items):
+        print(line)
+    print(f"shadow: {len(shadow_items)} collisions")
+    return EXIT_FINDINGS if shadow_items else EXIT_CLEAN
+
+
