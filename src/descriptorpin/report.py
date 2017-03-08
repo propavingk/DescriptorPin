@@ -18,3 +18,14 @@ from .transport import TransportFinding
 
 
 def render_mutations(statuses: list) -> list:
+    """Render mutated tools with their field-level diff."""
+    lines = []
+    muts = [s for s in statuses if s.status == MUTATED]
+    for status in muts:
+        lines.append(
+            f"MUTATION {status.key}: pinned {status.pinned_digest} "
+            f"scanned {status.scanned_digest}"
+        )
+        for change in status.changes:
+            lines.append(f"  field {change.field} changed")
+            lines.append(f"    pinned:  {_clip(change.pinned)}")
