@@ -39,3 +39,14 @@ def render_added_removed(statuses: list) -> list:
     for status in statuses:
         if status.status == "added":
             lines.append(f"ADDED {status.key}: scanned {status.scanned_digest}, not in pin")
+        elif status.status == "removed":
+            lines.append(f"REMOVED {status.key}: pinned {status.pinned_digest}, absent now")
+    return lines
+
+
+def render_shadows(items: list) -> list:
+    """Render cross-server name collisions."""
+    lines = []
+    for collision in items:
+        servers = ", ".join(collision.servers)
+        lines.append(
