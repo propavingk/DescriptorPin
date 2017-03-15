@@ -29,3 +29,13 @@ def render_mutations(statuses: list) -> list:
         for change in status.changes:
             lines.append(f"  field {change.field} changed")
             lines.append(f"    pinned:  {_clip(change.pinned)}")
+            lines.append(f"    scanned: {_clip(change.scanned)}")
+    return lines
+
+
+def render_added_removed(statuses: list) -> list:
+    """Render tools present now but not pinned, and pinned but now absent."""
+    lines = []
+    for status in statuses:
+        if status.status == "added":
+            lines.append(f"ADDED {status.key}: scanned {status.scanned_digest}, not in pin")
