@@ -61,3 +61,13 @@ def render_poison(named: list) -> list:
     lines = []
     for key, report in named:
         if not report.fired:
+            continue
+        lines.append(f"POISON {key}: score {report.score}, {len(report.signals)} signals")
+        for signal in report.signals:
+            lines.append(f"  signal {signal.name} (weight {signal.weight}): {signal.detail}")
+    return lines
+
+
+def render_transports(findings: list) -> list:
+    """Render flagged transports."""
+    lines = []
