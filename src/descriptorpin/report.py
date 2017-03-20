@@ -50,3 +50,14 @@ def render_shadows(items: list) -> list:
     for collision in items:
         servers = ", ".join(collision.servers)
         lines.append(
+            f"SHADOW {collision.name}: claimed by {collision.count} servers ({servers})"
+        )
+        lines.append("  precedence risk: client resolution order decides the winner")
+    return lines
+
+
+def render_poison(named: list) -> list:
+    """Render poisoning signals. `named` is a list of (key, PoisonReport)."""
+    lines = []
+    for key, report in named:
+        if not report.fired:
