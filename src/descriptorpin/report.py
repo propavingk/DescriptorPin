@@ -71,3 +71,14 @@ def render_poison(named: list) -> list:
 def render_transports(findings: list) -> list:
     """Render flagged transports."""
     lines = []
+    for finding in findings:
+        if finding.flagged:
+            lines.append(
+                f"TRANSPORT {finding.server}: transport '{finding.transport}' flagged, "
+                f"{finding.note}"
+            )
+    return lines
+
+
+def summary_line(
+    mutation_count: int,
