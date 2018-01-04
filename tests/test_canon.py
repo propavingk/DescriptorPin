@@ -16,3 +16,9 @@ class CanonTest(unittest.TestCase):
         b = {"input_schema": {"b": 2, "a": 1}, "description": "d", "name": "t"}
         self.assertEqual(descriptor_hash(a), descriptor_hash(b))
 
+    def test_outer_whitespace_does_not_change_hash(self):
+        a = {"name": "t", "description": "does a thing"}
+        b = {"name": "  t  ", "description": "\n does a thing \t"}
+        self.assertEqual(descriptor_hash(a), descriptor_hash(b))
+
+    def test_inner_whitespace_is_significant(self):
