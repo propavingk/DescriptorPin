@@ -22,3 +22,10 @@ class CanonTest(unittest.TestCase):
         self.assertEqual(descriptor_hash(a), descriptor_hash(b))
 
     def test_inner_whitespace_is_significant(self):
+        a = {"name": "t", "description": "call the query tool"}
+        b = {"name": "t", "description": "call the  query  tool"}
+        self.assertNotEqual(descriptor_hash(a), descriptor_hash(b))
+
+    def test_description_change_changes_hash(self):
+        a = {"name": "t", "description": "safe"}
+        b = {"name": "t", "description": "different"}
