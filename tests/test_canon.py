@@ -29,3 +29,9 @@ class CanonTest(unittest.TestCase):
     def test_description_change_changes_hash(self):
         a = {"name": "t", "description": "safe"}
         b = {"name": "t", "description": "different"}
+        self.assertNotEqual(descriptor_hash(a), descriptor_hash(b))
+
+    def test_extra_fields_are_dropped(self):
+        a = {"name": "t", "description": "d", "extra": "ignored"}
+        b = {"name": "t", "description": "d"}
+        self.assertEqual(descriptor_hash(a), descriptor_hash(b))
