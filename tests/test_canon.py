@@ -35,3 +35,10 @@ class CanonTest(unittest.TestCase):
         a = {"name": "t", "description": "d", "extra": "ignored"}
         b = {"name": "t", "description": "d"}
         self.assertEqual(descriptor_hash(a), descriptor_hash(b))
+
+    def test_missing_fields_become_empty(self):
+        canonical = canonical_descriptor({"name": "t"})
+        self.assertEqual(canonical["description"], "")
+        self.assertEqual(canonical["input_schema"], {})
+
+    def test_canonical_bytes_are_deterministic(self):
