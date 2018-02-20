@@ -13,3 +13,11 @@ SAMPLES = os.path.join(os.path.dirname(HERE), "samples")
 CLEAN = os.path.join(SAMPLES, "inventory_clean.json")
 MUTATED = os.path.join(SAMPLES, "inventory_mutated.json")
 PIN = os.path.join(SAMPLES, "pin.json")
+
+
+def _run(argv):
+    buffer = io.StringIO()
+    with redirect_stdout(buffer):
+        code = main(argv)
+    return code, buffer.getvalue()
+
