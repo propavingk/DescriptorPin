@@ -21,3 +21,11 @@ def _run(argv):
         code = main(argv)
     return code, buffer.getvalue()
 
+
+class CliTest(unittest.TestCase):
+    def test_version_is_clean(self):
+        code, out = _run(["version"])
+        self.assertEqual(code, 0)
+        self.assertIn("descriptorpin", out)
+
+    def test_scan_clean_exits_zero(self):
