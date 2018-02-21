@@ -29,3 +29,11 @@ class CliTest(unittest.TestCase):
         self.assertIn("descriptorpin", out)
 
     def test_scan_clean_exits_zero(self):
+        code, out = _run(["scan", CLEAN, "-p", PIN])
+        self.assertEqual(code, 0)
+        self.assertIn("0 findings", out)
+
+    def test_scan_mutated_exits_one(self):
+        code, out = _run(["scan", MUTATED, "-p", PIN])
+        self.assertEqual(code, 1)
+
