@@ -37,3 +37,11 @@ class CliTest(unittest.TestCase):
         code, out = _run(["scan", MUTATED, "-p", PIN])
         self.assertEqual(code, 1)
 
+    def test_scan_reports_every_class(self):
+        _, out = _run(["scan", MUTATED, "-p", PIN])
+        self.assertIn("MUTATION", out)
+        self.assertIn("SHADOW", out)
+        self.assertIn("POISON", out)
+        self.assertIn("TRANSPORT", out)
+
+    def test_diff_only_reports_mutations(self):
