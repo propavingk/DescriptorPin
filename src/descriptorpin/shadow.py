@@ -42,3 +42,14 @@ def collisions(inventory: Inventory) -> list:
     collision, so servers are de-duplicated per name before counting. The
     result is sorted by name for deterministic output.
     """
+    by_name = defaultdict(list)
+    for tool in inventory.all_tools():
+        servers_for_name = by_name[tool.name]
+        if tool.server not in servers_for_name:
+            servers_for_name.append(tool.server)
+
+    found = []
+    for name in sorted(by_name):
+        servers = by_name[name]
+        if len(servers) >= 2:
+            found.append(Collision(name=name, servers=tuple(sorted(servers))))
