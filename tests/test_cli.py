@@ -53,3 +53,11 @@ class CliTest(unittest.TestCase):
     def test_shadow_only_reports_collisions(self):
         code, out = _run(["shadow", MUTATED])
         self.assertEqual(code, 1)
+        self.assertIn("SHADOW", out)
+        self.assertNotIn("MUTATION", out)
+
+    def test_pin_then_scan_round_trip(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out_pin = os.path.join(tmp, "pin.json")
+            code, _ = _run(["pin", CLEAN, "-o", out_pin])
+            self.assertEqual(code, 0)
