@@ -45,3 +45,11 @@ class CliTest(unittest.TestCase):
         self.assertIn("TRANSPORT", out)
 
     def test_diff_only_reports_mutations(self):
+        code, out = _run(["diff", MUTATED, "-p", PIN])
+        self.assertEqual(code, 1)
+        self.assertIn("MUTATION", out)
+        self.assertNotIn("SHADOW", out)
+
+    def test_shadow_only_reports_collisions(self):
+        code, out = _run(["shadow", MUTATED])
+        self.assertEqual(code, 1)
