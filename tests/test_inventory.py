@@ -11,3 +11,11 @@ def _minimal():
             {
                 "name": "s1",
                 "transport": "http",
+                "tools": [
+                    {"name": "t1", "description": "d", "input_schema": {"type": "object"}}
+                ],
+            }
+        ]
+    }
+
+
