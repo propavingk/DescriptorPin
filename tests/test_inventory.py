@@ -19,3 +19,10 @@ def _minimal():
     }
 
 
+class InventoryTest(unittest.TestCase):
+    def test_parse_minimal(self):
+        inv = parse_inventory(_minimal())
+        self.assertEqual(len(inv.servers), 1)
+        self.assertEqual(len(inv.all_tools()), 1)
+        self.assertEqual(inv.servers[0].transport, "http")
+
