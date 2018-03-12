@@ -33,3 +33,11 @@ class InventoryTest(unittest.TestCase):
 
     def test_camel_case_schema_key_accepted(self):
         data = _minimal()
+        data["servers"][0]["tools"][0].pop("input_schema")
+        data["servers"][0]["tools"][0]["inputSchema"] = {"type": "string"}
+        inv = parse_inventory(data)
+        self.assertEqual(inv.all_tools()[0].input_schema, {"type": "string"})
+
+    def test_root_not_object_raises(self):
+        with self.assertRaises(InventoryError):
+            parse_inventory([])
