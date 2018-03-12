@@ -26,3 +26,10 @@ class InventoryTest(unittest.TestCase):
         self.assertEqual(len(inv.all_tools()), 1)
         self.assertEqual(inv.servers[0].transport, "http")
 
+    def test_tool_key_is_server_qualified(self):
+        inv = parse_inventory(_minimal())
+        tool = inv.all_tools()[0]
+        self.assertEqual(inv.tool_key(tool), "s1/t1")
+
+    def test_camel_case_schema_key_accepted(self):
+        data = _minimal()
