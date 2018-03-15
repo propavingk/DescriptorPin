@@ -41,3 +41,10 @@ class InventoryTest(unittest.TestCase):
     def test_root_not_object_raises(self):
         with self.assertRaises(InventoryError):
             parse_inventory([])
+
+    def test_missing_servers_raises(self):
+        with self.assertRaises(InventoryError):
+            parse_inventory({})
+
+    def test_tool_without_name_raises(self):
+        data = _minimal()
