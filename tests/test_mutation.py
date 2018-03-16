@@ -11,3 +11,10 @@ def _inv(description="original", extra=None):
     tools = [{"name": "t", "description": description, "input_schema": {"type": "object"}}]
     if extra:
         tools.append(extra)
+    return parse_inventory(
+        {"servers": [{"name": "s", "transport": "http", "tools": tools}]}
+    )
+
+
+class MutationTest(unittest.TestCase):
+    def test_unchanged_is_matched(self):
