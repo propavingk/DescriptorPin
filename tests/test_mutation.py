@@ -18,3 +18,9 @@ def _inv(description="original", extra=None):
 
 class MutationTest(unittest.TestCase):
     def test_unchanged_is_matched(self):
+        pin = build_pin(_inv())
+        statuses = compare(pin, _inv())
+        self.assertEqual(statuses[0].status, MATCHED)
+        self.assertEqual(mutations(statuses), [])
+
+    def test_changed_description_is_mutated(self):
