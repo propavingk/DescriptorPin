@@ -24,3 +24,10 @@ class MutationTest(unittest.TestCase):
         self.assertEqual(mutations(statuses), [])
 
     def test_changed_description_is_mutated(self):
+        pin = build_pin(_inv("original"))
+        statuses = compare(pin, _inv("changed after approval"))
+        muts = mutations(statuses)
+        self.assertEqual(len(muts), 1)
+        self.assertEqual(muts[0].status, MUTATED)
+
+    def test_field_diff_names_the_field(self):
