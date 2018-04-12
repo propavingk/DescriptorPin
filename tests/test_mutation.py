@@ -31,3 +31,10 @@ class MutationTest(unittest.TestCase):
         self.assertEqual(muts[0].status, MUTATED)
 
     def test_field_diff_names_the_field(self):
+        pin = build_pin(_inv("original"))
+        statuses = compare(pin, _inv("changed"))
+        change = mutations(statuses)[0].changes
+        fields = [c.field for c in change]
+        self.assertIn("description", fields)
+        self.assertNotIn("name", fields)
+
