@@ -45,3 +45,9 @@ class MutationTest(unittest.TestCase):
         self.assertEqual(change.pinned, "original")
         self.assertEqual(change.scanned, "changed")
 
+    def test_added_tool(self):
+        pin = build_pin(_inv())
+        extra = {"name": "new", "description": "d", "input_schema": {}}
+        statuses = compare(pin, _inv(extra=extra))
+        added = [s for s in statuses if s.status == ADDED]
+        self.assertEqual(len(added), 1)
