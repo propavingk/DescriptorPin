@@ -38,3 +38,10 @@ class MutationTest(unittest.TestCase):
         self.assertIn("description", fields)
         self.assertNotIn("name", fields)
 
+    def test_field_diff_shows_both_values(self):
+        pin = build_pin(_inv("original"))
+        statuses = compare(pin, _inv("changed"))
+        change = mutations(statuses)[0].changes[0]
+        self.assertEqual(change.pinned, "original")
+        self.assertEqual(change.scanned, "changed")
+
