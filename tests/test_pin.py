@@ -26,3 +26,11 @@ def _inv():
 
 class PinTest(unittest.TestCase):
     def test_build_pins_every_tool(self):
+        pin = build_pin(_inv())
+        self.assertEqual(len(pin.tools), 2)
+
+    def test_tools_sorted_by_key(self):
+        pin = build_pin(_inv())
+        keys = [t.key for t in pin.tools]
+        self.assertEqual(keys, sorted(keys))
+
