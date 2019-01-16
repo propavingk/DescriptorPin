@@ -19,3 +19,10 @@ def _inv():
                         {"name": "a", "description": "first", "input_schema": {}},
                     ],
                 }
+            ]
+        }
+    )
+
+
+class PinTest(unittest.TestCase):
+    def test_build_pins_every_tool(self):
