@@ -34,3 +34,10 @@ class PinTest(unittest.TestCase):
         keys = [t.key for t in pin.tools]
         self.assertEqual(keys, sorted(keys))
 
+    def test_approval_record_applied(self):
+        pin = build_pin(_inv(), approved_by="[MAINTAINER CONTACT]", approved_note="note")
+        for tool in pin.tools:
+            self.assertEqual(tool.approved_by, "[MAINTAINER CONTACT]")
+            self.assertEqual(tool.approved_note, "note")
+
+    def test_write_is_deterministic(self):
