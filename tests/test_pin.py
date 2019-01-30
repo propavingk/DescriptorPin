@@ -41,3 +41,11 @@ class PinTest(unittest.TestCase):
             self.assertEqual(tool.approved_note, "note")
 
     def test_write_is_deterministic(self):
+        self.assertEqual(write_pin(build_pin(_inv())), write_pin(build_pin(_inv())))
+
+    def test_round_trip(self):
+        pin = build_pin(_inv())
+        reparsed = parse_pin(json.loads(write_pin(pin)))
+        self.assertEqual(
+            [t.hash for t in pin.tools], [t.hash for t in reparsed.tools]
+        )
