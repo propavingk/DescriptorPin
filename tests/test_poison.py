@@ -12,3 +12,10 @@ from descriptorpin.poison import analyse
 
 class PoisonTest(unittest.TestCase):
     def test_plain_description_fires_nothing(self):
+        report = analyse(
+            "Read the contents of a file at the given path and return it as text."
+        )
+        self.assertFalse(report.fired)
+        self.assertEqual(report.score, 0)
+
+    def test_documentation_imperative_does_not_fire(self):
