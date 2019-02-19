@@ -15,3 +15,9 @@ def _server(name, tool_names):
         "name": name,
         "transport": "http",
         "tools": [{"name": t, "description": "d", "input_schema": {}} for t in tool_names],
+    }
+
+
+class ShadowTest(unittest.TestCase):
+    def test_no_collision_when_names_unique(self):
+        inv = _inv([_server("s1", ["a"]), _server("s2", ["b"])])
