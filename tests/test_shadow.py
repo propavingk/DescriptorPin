@@ -21,3 +21,8 @@ def _server(name, tool_names):
 class ShadowTest(unittest.TestCase):
     def test_no_collision_when_names_unique(self):
         inv = _inv([_server("s1", ["a"]), _server("s2", ["b"])])
+        self.assertEqual(collisions(inv), [])
+
+    def test_collision_across_two_servers(self):
+        inv = _inv([_server("s1", ["query"]), _server("s2", ["query"])])
+        found = collisions(inv)
