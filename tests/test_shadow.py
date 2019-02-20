@@ -26,3 +26,9 @@ class ShadowTest(unittest.TestCase):
     def test_collision_across_two_servers(self):
         inv = _inv([_server("s1", ["query"]), _server("s2", ["query"])])
         found = collisions(inv)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0].name, "query")
+        self.assertEqual(found[0].count, 2)
+        self.assertEqual(found[0].servers, ("s1", "s2"))
+
+    def test_same_name_on_one_server_is_not_a_collision(self):
