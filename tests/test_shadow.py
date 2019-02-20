@@ -32,3 +32,9 @@ class ShadowTest(unittest.TestCase):
         self.assertEqual(found[0].servers, ("s1", "s2"))
 
     def test_same_name_on_one_server_is_not_a_collision(self):
+        inv = _inv([_server("s1", ["dup", "dup"])])
+        self.assertEqual(collisions(inv), [])
+
+    def test_three_way_collision(self):
+        inv = _inv(
+            [_server("s1", ["x"]), _server("s2", ["x"]), _server("s3", ["x"])]
