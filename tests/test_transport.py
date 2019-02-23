@@ -13,3 +13,8 @@ def _inv(transports):
                 {"name": f"s{i}", "transport": t, "tools": []}
                 for i, t in enumerate(transports)
             ]
+        }
+    )
+
+
+class TransportTest(unittest.TestCase):
