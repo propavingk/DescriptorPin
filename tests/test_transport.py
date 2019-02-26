@@ -18,3 +18,8 @@ def _inv(transports):
 
 
 class TransportTest(unittest.TestCase):
+    def test_stdio_is_flagged(self):
+        findings = assess(_inv(["stdio"]))
+        self.assertTrue(findings[0].flagged)
+
+    def test_http_not_flagged(self):
