@@ -23,3 +23,8 @@ class TransportTest(unittest.TestCase):
         self.assertTrue(findings[0].flagged)
 
     def test_http_not_flagged(self):
+        findings = assess(_inv(["http"]))
+        self.assertFalse(findings[0].flagged)
+
+    def test_unknown_transport_not_flagged_but_noted(self):
+        findings = assess(_inv(["carrier-pigeon"]))
