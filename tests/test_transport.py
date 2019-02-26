@@ -28,3 +28,9 @@ class TransportTest(unittest.TestCase):
 
     def test_unknown_transport_not_flagged_but_noted(self):
         findings = assess(_inv(["carrier-pigeon"]))
+        self.assertFalse(findings[0].flagged)
+        self.assertIn("unrecognised", findings[0].note)
+
+    def test_flagged_filter(self):
+        findings = assess(_inv(["stdio", "http", "sse"]))
+        self.assertEqual(len(flagged(findings)), 1)
