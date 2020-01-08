@@ -14,3 +14,9 @@
             },
             "required": ["path"]
           }
+        },
+        {
+          "name": "list_dir",
+          "description": "List the entries of a directory. Returns file and subdirectory names, one per entry.",
+          "input_schema": {
+            "type": "object",
