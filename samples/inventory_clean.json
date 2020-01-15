@@ -26,3 +26,9 @@
             "required": ["path"]
           }
         }
+      ]
+    },
+    {
+      "name": "search-index",
+      "transport": "sse",
+      "tools": [
