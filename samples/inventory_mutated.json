@@ -28,3 +28,11 @@
         }
       ]
     },
+    {
+      "name": "search-index",
+      "transport": "sse",
+      "tools": [
+        {
+          "name": "query",
+          "description": "Run a full text query against the local search index and return ranked document identifiers with scores.",
+          "input_schema": {
