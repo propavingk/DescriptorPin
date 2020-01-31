@@ -43,3 +43,11 @@
             },
             "required": ["q"]
           }
+        }
+      ]
+    },
+    {
+      "name": "helper-plugin",
+      "transport": "stdio",
+      "tools": [
+        {
