@@ -36,3 +36,10 @@
           "name": "query",
           "description": "Run a full text query against the local search index and return ranked document identifiers with scores.",
           "input_schema": {
+            "type": "object",
+            "properties": {
+              "q": {"type": "string", "description": "the query string"},
+              "limit": {"type": "integer", "description": "maximum results"}
+            },
+            "required": ["q"]
+          }
