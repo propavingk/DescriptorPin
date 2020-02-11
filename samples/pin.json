@@ -1,0 +1,8 @@
+{
+  "format": "descriptorpin/pin/1",
+  "tool_version": "1.0.0",
+  "tools": [
+    {
+      "approved_by": "[MAINTAINER CONTACT]",
+      "approved_note": "authored test vector, clean baseline",
+      "descriptor": {
