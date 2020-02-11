@@ -6,3 +6,12 @@
       "approved_by": "[MAINTAINER CONTACT]",
       "approved_note": "authored test vector, clean baseline",
       "descriptor": {
+        "description": "List the entries of a directory. Returns file and subdirectory names, one per entry.",
+        "input_schema": {
+          "properties": {
+            "path": {
+              "description": "directory path",
+              "type": "string"
+            }
+          },
+          "required": [
