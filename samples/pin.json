@@ -32,3 +32,12 @@
       "approved_note": "authored test vector, clean baseline",
       "descriptor": {
         "description": "Read the contents of a file at the given path and return it as text. Accepts an absolute or workspace-relative path.",
+        "input_schema": {
+          "properties": {
+            "path": {
+              "description": "path to the file",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
