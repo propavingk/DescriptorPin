@@ -15,3 +15,11 @@
             }
           },
           "required": [
+            "path"
+          ],
+          "type": "object"
+        },
+        "name": "list_dir"
+      },
+      "digest": "10bc29d4c3e0",
+      "hash": "10bc29d4c3e053d36238926fd09a3019a58eda603e80ab7ae2afc97c7984f484",
