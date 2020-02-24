@@ -23,3 +23,12 @@
       },
       "digest": "10bc29d4c3e0",
       "hash": "10bc29d4c3e053d36238926fd09a3019a58eda603e80ab7ae2afc97c7984f484",
+      "key": "files-local/list_dir",
+      "name": "list_dir",
+      "server": "files-local"
+    },
+    {
+      "approved_by": "[MAINTAINER CONTACT]",
+      "approved_note": "authored test vector, clean baseline",
+      "descriptor": {
+        "description": "Read the contents of a file at the given path and return it as text. Accepts an absolute or workspace-relative path.",
