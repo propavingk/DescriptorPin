@@ -41,3 +41,12 @@
           },
           "required": [
             "path"
+          ],
+          "type": "object"
+        },
+        "name": "read_file"
+      },
+      "digest": "bcf8a5056056",
+      "hash": "bcf8a5056056f50a1f23bcc1c11eeb951e032ff6523ba11b21dbf408b05f2c94",
+      "key": "files-local/read_file",
+      "name": "read_file",
