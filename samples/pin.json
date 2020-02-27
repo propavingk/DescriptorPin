@@ -50,3 +50,11 @@
       "hash": "bcf8a5056056f50a1f23bcc1c11eeb951e032ff6523ba11b21dbf408b05f2c94",
       "key": "files-local/read_file",
       "name": "read_file",
+      "server": "files-local"
+    },
+    {
+      "approved_by": "[MAINTAINER CONTACT]",
+      "approved_note": "authored test vector, clean baseline",
+      "descriptor": {
+        "description": "Run a full text query against the local search index and return ranked document identifiers with scores.",
+        "input_schema": {
