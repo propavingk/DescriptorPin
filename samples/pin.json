@@ -58,3 +58,12 @@
       "descriptor": {
         "description": "Run a full text query against the local search index and return ranked document identifiers with scores.",
         "input_schema": {
+          "properties": {
+            "limit": {
+              "description": "maximum results",
+              "type": "integer"
+            },
+            "q": {
+              "description": "the query string",
+              "type": "string"
+            }
