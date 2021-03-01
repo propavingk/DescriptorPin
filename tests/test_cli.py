@@ -61,3 +61,17 @@ class CliTest(unittest.TestCase):
             out_pin = os.path.join(tmp, "pin.json")
             code, _ = _run(["pin", CLEAN, "-o", out_pin])
             self.assertEqual(code, 0)
+            code, out = _run(["scan", CLEAN, "-p", out_pin])
+            self.assertEqual(code, 0)
+            self.assertIn("0 findings", out)
+
+    def test_bad_inventory_is_usage_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            bad = os.path.join(tmp, "bad.json")
+            with open(bad, "w", encoding="utf-8") as handle:
+                handle.write("{not json")
+            code, _ = _run(["shadow", bad])
+            self.assertEqual(code, 2)
+
+
+if __name__ == "__main__":
