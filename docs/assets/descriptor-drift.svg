@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  descriptor-drift.svg. A field-level comparison of the pinned baseline
+  against the scanned inventory, built entirely from a real run of this
+  project against samples/. The command was:
+
+    PYTHONPATH=src python -m descriptorpin scan \
+      samples/inventory_mutated.json -p samples/pin.json
+
+  Every number and digest below is copied from that run:
+    - files-local/read_file pinned bcf8a5056056, scanned 4a3b9edca34f
