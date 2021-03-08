@@ -9,3 +9,10 @@
 
   Every number and digest below is copied from that run:
     - files-local/read_file pinned bcf8a5056056, scanned 4a3b9edca34f
+    - description field mutated (name and input_schema unchanged)
+    - query claimed by 2 servers (helper-plugin, search-index)
+    - read_file poison score 8, 3 signals: concealment 3, priority_override 3,
+      imperative_opener 2
+    - helper-plugin transport stdio flagged
+    - summary: 4 findings
+
