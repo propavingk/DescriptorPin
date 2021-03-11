@@ -45,3 +45,11 @@
   <text x="24" y="36" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#233044">scan samples/inventory_mutated.json against pin</text>
   <text x="24" y="56" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="13" fill="#64748b">4 findings: 1 mutation, 1 shadow, 1 poison, 1 transport (stdio)</text>
   <line x1="24" y1="68" x2="616" y2="68" stroke="#233044" stroke-width="1"/>
+
+  <!-- Panel 1: mutation, field-level comparison -->
+  <text x="24" y="96" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#233044">1  mutation  files-local/read_file</text>
+
+  <!-- Column headers -->
+  <text x="140" y="120" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">pinned</text>
+  <text x="392" y="120" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">scanned</text>
+
