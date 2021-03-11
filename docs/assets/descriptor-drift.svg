@@ -16,3 +16,11 @@
     - helper-plugin transport stdio flagged
     - summary: 4 findings
 
+  Three stacked panels share one left gutter. Panel one is the mutation, panel
+  two the shadow collision, panel three the poison signal breakdown.
+
+  Palette reason: integrity monitoring, so ink slate (#233044) for stable and
+  matched material, a single alert amber (#b45309) for the one thing that
+  changed and for every finding the reader must act on. Neutral grey (#64748b)
+  for secondary labels. Two colours plus neutrals, within budget.
+
