@@ -38,3 +38,10 @@
      role="img" aria-labelledby="driftTitle driftDesc">
   <title id="driftTitle">descriptorpin field-level drift from a real scan</title>
   <desc id="driftDesc">Three panels from a real run. Panel one shows the read_file descriptor with its description field mutated between pinned digest bcf8a5056056 and scanned digest 4a3b9edca34f. Panel two shows the tool name query claimed by two servers. Panel three shows three poisoning signals totalling a score of eight.</desc>
+
+  <rect x="0" y="0" width="640" height="456" fill="#ffffff"/>
+
+  <!-- Header -->
+  <text x="24" y="36" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#233044">scan samples/inventory_mutated.json against pin</text>
+  <text x="24" y="56" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="13" fill="#64748b">4 findings: 1 mutation, 1 shadow, 1 poison, 1 transport (stdio)</text>
+  <line x1="24" y1="68" x2="616" y2="68" stroke="#233044" stroke-width="1"/>
