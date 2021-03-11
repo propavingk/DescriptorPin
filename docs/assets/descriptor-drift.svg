@@ -31,3 +31,10 @@
   and overlap: panels are vertically separated and rows within a panel step
   by at least 20 units.
 
+  Motion: none. A static comparison is the professional default and this
+  figure reads fully frozen.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 456" width="640" height="456"
+     role="img" aria-labelledby="driftTitle driftDesc">
+  <title id="driftTitle">descriptorpin field-level drift from a real scan</title>
+  <desc id="driftDesc">Three panels from a real run. Panel one shows the read_file descriptor with its description field mutated between pinned digest bcf8a5056056 and scanned digest 4a3b9edca34f. Panel two shows the tool name query claimed by two servers. Panel three shows three poisoning signals totalling a score of eight.</desc>
