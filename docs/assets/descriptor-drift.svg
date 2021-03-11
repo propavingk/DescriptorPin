@@ -24,3 +24,10 @@
   changed and for every finding the reader must act on. Neutral grey (#64748b)
   for secondary labels. Two colours plus neutrals, within budget.
 
+  Contrast on the #ffffff panel fill: #233044 12.6:1 (AA), #b45309 4.6:1 (AA),
+  #64748b 4.7:1 (AA). Digest chips use #ffffff on #b45309 at 12px, 4.6:1.
+  Strokes: panel and box 1.5, connector and divider 1. Corner radius 3.
+  All edges and baselines on a 4-unit grid. No two labels share a baseline
+  and overlap: panels are vertically separated and rows within a panel step
+  by at least 20 units.
+
