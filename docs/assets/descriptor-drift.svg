@@ -53,3 +53,10 @@
   <text x="140" y="120" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">pinned</text>
   <text x="392" y="120" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">scanned</text>
 
+  <!-- Row: name (unchanged) -->
+  <text x="24" y="148" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#64748b">name</text>
+  <text x="140" y="148" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">read_file</text>
+  <text x="392" y="148" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">read_file</text>
+  <text x="560" y="148" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">same</text>
+
+  <!-- Row: input_schema (unchanged) -->
