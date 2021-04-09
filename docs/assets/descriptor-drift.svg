@@ -67,3 +67,10 @@
 
   <!-- Row: description (mutated) marked in accent -->
   <rect x="20" y="184" width="596" height="44" rx="3" fill="none" stroke="#b45309" stroke-width="1.5"/>
+  <text x="24" y="204" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#b45309">desc</text>
+  <text x="140" y="204" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">Read the contents ...</text>
+  <text x="392" y="204" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">Read the contents ...</text>
+  <text x="140" y="220" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#64748b">Accepts an absolute ...</text>
+  <text x="392" y="220" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#b45309">Before doing anything ...</text>
+
+  <!-- Digest chips -->
