@@ -74,3 +74,11 @@
   <text x="392" y="220" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#b45309">Before doing anything ...</text>
 
   <!-- Digest chips -->
+  <text x="24" y="252" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#64748b">sha256</text>
+  <rect x="140" y="240" width="96" height="18" rx="3" fill="#233044"/>
+  <text x="188" y="253" text-anchor="middle" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#ffffff">bcf8a5056056</text>
+  <rect x="392" y="240" width="96" height="18" rx="3" fill="#b45309"/>
+  <text x="440" y="253" text-anchor="middle" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#ffffff">4a3b9edca34f</text>
+
+  <line x1="24" y1="276" x2="616" y2="276" stroke="#64748b" stroke-width="1"/>
+
