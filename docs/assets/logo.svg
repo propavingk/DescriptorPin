@@ -2,3 +2,7 @@
 <!--
   descriptorpin logo. Wordmark with a colour split at the morpheme boundary
   of the compound name: "descriptor" in ink slate, "pin" in the accent amber,
+  because pinning is the one operation the tool performs on a descriptor.
+
+  Above the wordmark sits a literal diagram of the core data structure: a
+  descriptor box linked by a pin (the connector) to a fixed hash node. One
