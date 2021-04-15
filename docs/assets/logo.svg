@@ -6,3 +6,7 @@
 
   Above the wordmark sits a literal diagram of the core data structure: a
   descriptor box linked by a pin (the connector) to a fixed hash node. One
+  connector stroke, one box stroke, one node radius, one corner radius.
+
+  Palette reason: subject is integrity anchoring, so ink slate (#233044) for
+  the descriptor and a single warm anchor amber (#b45309) for the pin, the
