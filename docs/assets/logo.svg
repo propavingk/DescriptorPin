@@ -23,3 +23,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" width="240" height="120"
      role="img" aria-labelledby="logoTitle logoDesc">
   <title id="logoTitle">descriptorpin</title>
+  <desc id="logoDesc">A descriptor box linked by a pin to a fixed hash node, above the wordmark descriptor in slate and pin in amber.</desc>
+  <rect x="0" y="0" width="240" height="120" fill="#ffffff"/>
+
+  <!-- Mark: descriptor box pinned to a hash node, centred on the 8-unit grid. -->
