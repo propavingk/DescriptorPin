@@ -10,3 +10,7 @@
 
   Palette reason: subject is integrity anchoring, so ink slate (#233044) for
   the descriptor and a single warm anchor amber (#b45309) for the pin, the
+  thing the reader should look at first. Neutrals do not count to the budget.
+
+  Contrast against the white background: #233044 is 12.6:1 (AA). #b45309 is
+  4.6:1 (AA normal text). The hash glyph #ffffff on the #b45309 node fill is
