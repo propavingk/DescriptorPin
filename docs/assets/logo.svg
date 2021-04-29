@@ -18,3 +18,8 @@
   connector 1.5. Corner radius 3. Coordinates on an 8-unit grid.
 
   Legible at 32px and 240px: the wordmark carries the identity at small size,
+  the mark reads as a linked pair at large size.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" width="240" height="120"
+     role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">descriptorpin</title>
