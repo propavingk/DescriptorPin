@@ -14,3 +14,7 @@
 
   Contrast against the white background: #233044 is 12.6:1 (AA). #b45309 is
   4.6:1 (AA normal text). The hash glyph #ffffff on the #b45309 node fill is
+  4.6:1 at 11px, and the node is a mark not body copy. Strokes: box 1.5,
+  connector 1.5. Corner radius 3. Coordinates on an 8-unit grid.
+
+  Legible at 32px and 240px: the wordmark carries the identity at small size,
