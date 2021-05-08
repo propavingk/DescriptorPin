@@ -25,3 +25,20 @@ The eight checks, in order:
 
 from __future__ import annotations
 
+import re
+import sys
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+ASSETS = ROOT / "docs" / "assets"
+README = ROOT / "README.md"
+
+# File extensions treated as tracked text for the em dash sweep.
+TEXT_SUFFIXES = {
+    ".md",
+    ".py",
+    ".svg",
+    ".json",
+    ".toml",
+    ".cff",
