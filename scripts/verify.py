@@ -42,3 +42,20 @@ TEXT_SUFFIXES = {
     ".json",
     ".toml",
     ".cff",
+    ".yml",
+    ".yaml",
+    ".txt",
+    ".cfg",
+    ".ini",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+}
+
+# Directories that never carry tracked source and only add noise.
+SKIP_DIRS = {".git", "__pycache__", ".venv", "venv", "build", "dist", ".mypy_cache"}
+
+BANNED_MARKETING = (
+    "ai powered",
+    "ai-powered",
+    "seamless",
