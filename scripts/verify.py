@@ -77,3 +77,20 @@ BANNED_MARKETING = (
     "powerful",
     "effortless",
 )
+
+EM_DASH_FORMS = ("\u2014", "&#8212;", "&mdash;")
+
+# Average glyph advance as a fraction of the font size. Sans and mono differ,
+# per the width estimate recorded in LESSONS.md.
+EM_SANS = 0.58
+EM_MONO = 0.60
+
+
+def _svg_files() -> list[Path]:
+    if not ASSETS.is_dir():
+        return []
+    return sorted(ASSETS.rglob("*.svg"))
+
+
+def _tracked_text_files() -> list[Path]:
+    out: list[Path] = []
