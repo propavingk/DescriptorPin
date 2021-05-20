@@ -111,3 +111,21 @@ def check_svg_parses() -> tuple[bool, str]:
         try:
             ET.parse(svg)
         except ET.ParseError as exc:
+            return False, f"check 1 svg-parses: FAIL {svg.name} does not parse: {exc}"
+    return True, f"check 1 svg-parses: OK ({len(svgs)} svg)"
+
+
+def check_no_forbidden_filters() -> tuple[bool, str]:
+    """2. No .svg contains feGaussianBlur, feDropShadow, or feTurbulence."""
+    forbidden = ("feGaussianBlur", "feDropShadow", "feTurbulence")
+    for svg in _svg_files():
+        text = svg.read_text(encoding="utf-8")
+        for token in forbidden:
+            if token in text:
+                return False, f"check 2 no-filters: FAIL {svg.name} contains {token}"
+    return True, "check 2 no-filters: OK"
+
+
+def check_no_double_hyphen_in_comments() -> tuple[bool, str]:
+    """3. No XML comment in any .svg contains the illegal `--` sequence."""
+    comment = re.compile(r"<!--(.*?)-->", re.DOTALL)
