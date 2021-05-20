@@ -94,3 +94,20 @@ def _svg_files() -> list[Path]:
 
 def _tracked_text_files() -> list[Path]:
     out: list[Path] = []
+    for path in ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        if any(part in SKIP_DIRS for part in path.parts):
+            continue
+        if path.suffix.lower() in TEXT_SUFFIXES or path.name in TEXT_SUFFIXES:
+            out.append(path)
+    return sorted(out)
+
+
+def check_svg_parses() -> tuple[bool, str]:
+    """1. Every .svg under docs/assets/ parses as XML."""
+    svgs = _svg_files()
+    for svg in svgs:
+        try:
+            ET.parse(svg)
+        except ET.ParseError as exc:
