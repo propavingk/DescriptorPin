@@ -198,3 +198,20 @@ def check_svg_accessibility() -> tuple[bool, str]:
     return True, "check 7 svg-a11y: OK"
 
 
+def _text_width(content: str, font_size: float, font_family: str) -> float:
+    family = (font_family or "").lower()
+    is_mono = "mono" in family or "consolas" in family or "courier" in family
+    per = EM_MONO if is_mono else EM_SANS
+    return len(content) * per * font_size
+
+
+def check_no_label_overlap() -> tuple[bool, str]:
+    """8. No two text labels sharing a baseline in any .svg overlap."""
+    for svg in _svg_files():
+        tree = ET.parse(svg)
+        root = tree.getroot()
+        rows: dict[int, list[tuple[float, float, str]]] = {}
+        for el in root.iter():
+            if _localname(el.tag) != "text":
+                continue
+            content = "".join(el.itertext()).strip()
