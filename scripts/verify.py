@@ -146,3 +146,20 @@ def check_no_em_dash() -> tuple[bool, str]:
         # This checker names the three forms as data; skip its own source so
         # the definition list does not trip the check.
         if path.resolve() == self_path:
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for form in EM_DASH_FORMS:
+            if form in text:
+                rel = path.relative_to(ROOT)
+                return False, f"check 4 em-dash: FAIL {rel} contains {form!r}"
+    return True, "check 4 em-dash: OK"
+
+
+def check_no_pandoc_image_attr() -> tuple[bool, str]:
+    """5. README.md contains no pandoc style image attribute block."""
+    if not README.is_file():
+        return False, "check 5 pandoc-attr: FAIL README.md missing"
+    text = README.read_text(encoding="utf-8")
+    pattern = re.compile(r"\)\{[^}]*(?:width|height)[^}]*\}")
+    if pattern.search(text):
+        return False, "check 5 pandoc-attr: FAIL README has a pandoc image attribute block"
