@@ -129,3 +129,20 @@ def check_no_forbidden_filters() -> tuple[bool, str]:
 def check_no_double_hyphen_in_comments() -> tuple[bool, str]:
     """3. No XML comment in any .svg contains the illegal `--` sequence."""
     comment = re.compile(r"<!--(.*?)-->", re.DOTALL)
+    for svg in _svg_files():
+        text = svg.read_text(encoding="utf-8")
+        for body in comment.findall(text):
+            if "--" in body:
+                return False, (
+                    f"check 3 comment-hyphen: FAIL {svg.name} has '--' inside a comment"
+                )
+    return True, "check 3 comment-hyphen: OK"
+
+
+def check_no_em_dash() -> tuple[bool, str]:
+    """4. No tracked text file contains U+2014, `&#8212;`, or `&mdash;`."""
+    self_path = Path(__file__).resolve()
+    for path in _tracked_text_files():
+        # This checker names the three forms as data; skip its own source so
+        # the definition list does not trip the check.
+        if path.resolve() == self_path:
