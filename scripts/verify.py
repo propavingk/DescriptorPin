@@ -180,3 +180,21 @@ def check_no_marketing_terms() -> tuple[bool, str]:
 def _localname(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
+
+def check_svg_accessibility() -> tuple[bool, str]:
+    """7. Every .svg carries a viewBox, role="img", a <title>, and a <desc>."""
+    for svg in _svg_files():
+        tree = ET.parse(svg)
+        root = tree.getroot()
+        if root.get("viewBox") is None:
+            return False, f"check 7 svg-a11y: FAIL {svg.name} has no viewBox"
+        if root.get("role") != "img":
+            return False, f"check 7 svg-a11y: FAIL {svg.name} has no role=img"
+        locals_ = {_localname(el.tag) for el in root.iter()}
+        if "title" not in locals_:
+            return False, f"check 7 svg-a11y: FAIL {svg.name} has no <title>"
+        if "desc" not in locals_:
+            return False, f"check 7 svg-a11y: FAIL {svg.name} has no <desc>"
+    return True, "check 7 svg-a11y: OK"
+
+
