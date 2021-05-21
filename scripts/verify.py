@@ -163,3 +163,20 @@ def check_no_pandoc_image_attr() -> tuple[bool, str]:
     pattern = re.compile(r"\)\{[^}]*(?:width|height)[^}]*\}")
     if pattern.search(text):
         return False, "check 5 pandoc-attr: FAIL README has a pandoc image attribute block"
+    return True, "check 5 pandoc-attr: OK"
+
+
+def check_no_marketing_terms() -> tuple[bool, str]:
+    """6. README.md contains none of the banned marketing terms."""
+    if not README.is_file():
+        return False, "check 6 marketing: FAIL README.md missing"
+    lowered = README.read_text(encoding="utf-8").lower()
+    for term in BANNED_MARKETING:
+        if term in lowered:
+            return False, f"check 6 marketing: FAIL README contains '{term}'"
+    return True, "check 6 marketing: OK"
+
+
+def _localname(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1]
+
