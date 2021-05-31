@@ -215,3 +215,20 @@ def check_no_label_overlap() -> tuple[bool, str]:
             if _localname(el.tag) != "text":
                 continue
             content = "".join(el.itertext()).strip()
+            if not content:
+                continue
+            try:
+                x = float(el.get("x", "0"))
+                y = float(el.get("y", "0"))
+                size = float(el.get("font-size", "12"))
+            except ValueError:
+                continue
+            anchor = el.get("text-anchor", "start")
+            family = el.get("font-family", "")
+            width = _text_width(content, size, family)
+            if anchor == "middle":
+                left = x - width / 2.0
+            elif anchor == "end":
+                left = x - width
+            else:
+                left = x
