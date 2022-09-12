@@ -206,4 +206,4 @@ pull request. The suite is standard library `unittest` only.
 
 MIT. See `LICENSE`.
 
-<!-- draft note 1004 -->
+<!-- draft note 1005 -->
