@@ -60,3 +60,14 @@ def assess(inventory: Inventory) -> list:
         findings.append(
             TransportFinding(
                 server=server.name,
+                transport=transport,
+                flagged=flagged,
+                note=note,
+            )
+        )
+    findings.sort(key=lambda f: f.server)
+    return findings
+
+
+def flagged(findings: list) -> list:
+    """Filter transport findings to the flagged ones only."""
