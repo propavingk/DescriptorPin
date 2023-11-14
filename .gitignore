@@ -1,0 +1,29 @@
+# Byte-compiled and cache
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Build and packaging artefacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor and OS clutter
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local scratch pins produced while trying the tool
+/tmp_pin.json
+*.local.json
