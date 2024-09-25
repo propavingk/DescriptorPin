@@ -38,3 +38,13 @@
           "input_schema": {
             "type": "object",
             "properties": {
+              "q": {"type": "string", "description": "the query string"},
+              "limit": {"type": "integer", "description": "maximum results"}
+            },
+            "required": ["q"]
+          }
+        }
+      ]
+    }
+  ]
+}
