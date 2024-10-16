@@ -48,3 +48,16 @@ class InventoryTest(unittest.TestCase):
 
     def test_tool_without_name_raises(self):
         data = _minimal()
+        data["servers"][0]["tools"][0].pop("name")
+        with self.assertRaises(InventoryError):
+            parse_inventory(data)
+
+    def test_description_defaults_to_empty(self):
+        data = _minimal()
+        data["servers"][0]["tools"][0].pop("description")
+        inv = parse_inventory(data)
+        self.assertEqual(inv.all_tools()[0].description, "")
+
+
+if __name__ == "__main__":
+    unittest.main()
