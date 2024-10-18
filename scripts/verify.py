@@ -232,3 +232,43 @@ def check_no_label_overlap() -> tuple[bool, str]:
                 left = x - width
             else:
                 left = x
+            right = left + width
+            rows.setdefault(round(y), []).append((left, right, content))
+        for y, spans in rows.items():
+            spans.sort(key=lambda s: s[0])
+            for i in range(1, len(spans)):
+                prev_left, prev_right, prev_text = spans[i - 1]
+                left, right, text = spans[i]
+                if left < prev_right - 0.5:
+                    return False, (
+                        f"check 8 label-overlap: FAIL {svg.name} at y={y}: "
+                        f"'{prev_text}' overlaps '{text}'"
+                    )
+    return True, "check 8 label-overlap: OK"
+
+
+CHECKS = (
+    check_svg_parses,
+    check_no_forbidden_filters,
+    check_no_double_hyphen_in_comments,
+    check_no_em_dash,
+    check_no_pandoc_image_attr,
+    check_no_marketing_terms,
+    check_svg_accessibility,
+    check_no_label_overlap,
+)
+
+
+def main() -> int:
+    failures = 0
+    for check in CHECKS:
+        ok, line = check()
+        if not ok:
+            failures += 1
+        print(line)
+    print(f"verify: {len(CHECKS)} checks, {failures} failures")
+    return 0 if failures == 0 else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
