@@ -67,3 +67,19 @@
               "description": "the query string",
               "type": "string"
             }
+          },
+          "required": [
+            "q"
+          ],
+          "type": "object"
+        },
+        "name": "query"
+      },
+      "digest": "3cdcf88d9dc0",
+      "hash": "3cdcf88d9dc0a06d200d7d80fc023d36cf64c031dd2af26190110462bc784e2c",
+      "key": "search-index/query",
+      "name": "query",
+      "server": "search-index"
+    }
+  ]
+}
