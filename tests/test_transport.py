@@ -34,3 +34,12 @@ class TransportTest(unittest.TestCase):
     def test_flagged_filter(self):
         findings = assess(_inv(["stdio", "http", "sse"]))
         self.assertEqual(len(flagged(findings)), 1)
+
+    def test_findings_sorted_by_server(self):
+        findings = assess(_inv(["http", "stdio"]))
+        names = [f.server for f in findings]
+        self.assertEqual(names, sorted(names))
+
+
+if __name__ == "__main__":
+    unittest.main()
