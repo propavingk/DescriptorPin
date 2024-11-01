@@ -51,3 +51,16 @@ class MutationTest(unittest.TestCase):
         statuses = compare(pin, _inv(extra=extra))
         added = [s for s in statuses if s.status == ADDED]
         self.assertEqual(len(added), 1)
+        self.assertEqual(added[0].key, "s/new")
+
+    def test_removed_tool(self):
+        extra = {"name": "gone", "description": "d", "input_schema": {}}
+        pin = build_pin(_inv(extra=extra))
+        statuses = compare(pin, _inv())
+        removed = [s for s in statuses if s.status == REMOVED]
+        self.assertEqual(len(removed), 1)
+        self.assertEqual(removed[0].key, "s/gone")
+
+
+if __name__ == "__main__":
+    unittest.main()
