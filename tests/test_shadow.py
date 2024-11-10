@@ -38,3 +38,14 @@ class ShadowTest(unittest.TestCase):
     def test_three_way_collision(self):
         inv = _inv(
             [_server("s1", ["x"]), _server("s2", ["x"]), _server("s3", ["x"])]
+        )
+        found = collisions(inv)
+        self.assertEqual(found[0].count, 3)
+
+    def test_servers_reported_sorted(self):
+        inv = _inv([_server("zeta", ["x"]), _server("alpha", ["x"])])
+        self.assertEqual(collisions(inv)[0].servers, ("alpha", "zeta"))
+
+
+if __name__ == "__main__":
+    unittest.main()
