@@ -49,3 +49,16 @@ class PinTest(unittest.TestCase):
         self.assertEqual(
             [t.hash for t in pin.tools], [t.hash for t in reparsed.tools]
         )
+
+    def test_descriptor_is_stored_for_diff(self):
+        pin = build_pin(_inv())
+        tool = pin.by_key()["s1/a"]
+        self.assertEqual(tool.descriptor["description"], "first")
+
+    def test_bad_format_raises(self):
+        with self.assertRaises(PinError):
+            parse_pin({"format": "wrong", "tools": []})
+
+
+if __name__ == "__main__":
+    unittest.main()
