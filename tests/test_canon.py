@@ -42,3 +42,14 @@ class CanonTest(unittest.TestCase):
         self.assertEqual(canonical["input_schema"], {})
 
     def test_canonical_bytes_are_deterministic(self):
+        d = {"name": "t", "description": "d", "input_schema": {"z": 1, "a": 2}}
+        self.assertEqual(canonical_bytes(d), canonical_bytes(d))
+
+    def test_short_digest_length(self):
+        h = descriptor_hash({"name": "t"})
+        self.assertEqual(len(short_digest(h)), 12)
+        self.assertTrue(h.startswith(short_digest(h)))
+
+
+if __name__ == "__main__":
+    unittest.main()
