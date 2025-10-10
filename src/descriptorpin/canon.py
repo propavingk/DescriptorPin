@@ -64,3 +64,14 @@ def canonical_bytes(descriptor: Mapping[str, Any]) -> bytes:
         sort_keys=True,
         separators=(",", ":"),
         ensure_ascii=False,
+    ).encode("utf-8")
+
+
+def descriptor_hash(descriptor: Mapping[str, Any]) -> str:
+    """Return the hex SHA-256 of the canonical descriptor bytes."""
+    return hashlib.sha256(canonical_bytes(descriptor)).hexdigest()
+
+
+def short_digest(full_hash: str, length: int = 12) -> str:
+    """Return a truncated digest for display. Never used for comparison."""
+    return full_hash[:length]
