@@ -98,3 +98,19 @@ def _parse_server(raw: Any) -> Server:
 def parse_inventory(data: Any) -> Inventory:
     """Parse a decoded JSON inventory document into an Inventory."""
     _require(isinstance(data, dict), "inventory root is not an object")
+    raw_servers = data.get("servers")
+    _require(isinstance(raw_servers, list), "inventory has no 'servers' list")
+    servers = tuple(_parse_server(s) for s in raw_servers)
+    return Inventory(servers=servers)
+
+
+def load_inventory(path: str) -> Inventory:
+    """Read and parse an inventory file from disk."""
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            data = json.load(handle)
+    except FileNotFoundError as exc:
+        raise InventoryError(f"inventory file not found: {path}") from exc
+    except json.JSONDecodeError as exc:
+        raise InventoryError(f"inventory file is not valid JSON: {exc}") from exc
+    return parse_inventory(data)
