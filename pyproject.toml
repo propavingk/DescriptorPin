@@ -23,3 +23,10 @@ classifiers = [
 descriptorpin = "descriptorpin.cli:main"
 
 [tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/propavingk/DescriptorPin"
+Source = "https://github.com/propavingk/DescriptorPin"
+
+<!-- draft note 1703 -->
