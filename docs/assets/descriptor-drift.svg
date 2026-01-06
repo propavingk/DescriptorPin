@@ -96,3 +96,22 @@
   <line x1="24" y1="360" x2="616" y2="360" stroke="#64748b" stroke-width="1"/>
 
   <!-- Panel 3: poison signals, ranked bar -->
+  <text x="24" y="388" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#233044">3  poison  read_file description, score 8 across 3 signals</text>
+
+  <!-- concealment weight 3 -->
+  <text x="24" y="412" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">concealment</text>
+  <rect x="200" y="402" width="144" height="12" rx="3" fill="#b45309"/>
+  <text x="356" y="412" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">3</text>
+
+  <!-- priority_override weight 3 -->
+  <text x="24" y="432" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">priority_override</text>
+  <rect x="200" y="422" width="144" height="12" rx="3" fill="#b45309"/>
+  <text x="356" y="432" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">3</text>
+
+  <!-- imperative_opener weight 2 -->
+  <text x="24" y="452" font-family="'Cascadia Mono','JetBrains Mono',Consolas,monospace" font-size="12" fill="#233044">imperative_opener</text>
+  <rect x="200" y="442" width="96" height="12" rx="3" fill="#233044"/>
+  <text x="308" y="452" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#64748b">2</text>
+</svg>
+
+<!-- draft note 1704 -->
