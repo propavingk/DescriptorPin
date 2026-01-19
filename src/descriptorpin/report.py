@@ -82,3 +82,24 @@ def render_transports(findings: list) -> list:
 
 def summary_line(
     mutation_count: int,
+    shadow_count: int,
+    poison_count: int,
+    transport_count: int,
+) -> str:
+    """A single deterministic summary counting findings by class."""
+    total = mutation_count + shadow_count + poison_count + transport_count
+    return (
+        f"summary: {total} findings "
+        f"({mutation_count} mutation, {shadow_count} shadow, "
+        f"{poison_count} poison, {transport_count} transport)"
+    )
+
+
+def _clip(text: str, width: int = 88) -> str:
+    """Clip a value for display, marking truncation explicitly."""
+    text = text.replace("\n", " ")
+    if len(text) <= width:
+        return text
+    return text[: width - 3] + "..."
+
+# draft note 1711
