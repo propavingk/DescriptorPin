@@ -15,3 +15,9 @@ version: "1.0.0"
 keywords:
   - mcp
   - security
+  - tool-poisoning
+  - integrity
+  - descriptor
+repository-code: "[REPOSITORY URL]"
+
+<!-- draft note 1710 -->
