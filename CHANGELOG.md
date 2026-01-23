@@ -77,3 +77,18 @@ Keep a Changelog, and the project uses semantic versioning.
 - Mutation checks for drifted descriptors.
 - Poison value detection.
 
+## [0.2.0] - 2014-09-02
+
+### Added
+
+- Pin file reader and transport descriptor parsing.
+- JSON inventory loader.
+
+## [0.1.0] - 2013-05-14
+
+### Added
+
+- Initial canonicalizer for descriptor documents.
+- Single scan entry point over one inventory file.
+
+<!-- draft note 1716 -->
