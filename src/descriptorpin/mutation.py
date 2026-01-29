@@ -151,3 +151,6 @@ def compare(pin: PinFile, inventory: Inventory) -> list:
 
 def mutations(statuses: list) -> list:
     """Filter a comparison to the mutated tools only."""
+    return [s for s in statuses if s.status == MUTATED]
+
+# draft note 1721
