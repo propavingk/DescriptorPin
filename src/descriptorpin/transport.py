@@ -71,3 +71,4 @@ def assess(inventory: Inventory) -> list:
 
 def flagged(findings: list) -> list:
     """Filter transport findings to the flagged ones only."""
+    return [f for f in findings if f.flagged]
