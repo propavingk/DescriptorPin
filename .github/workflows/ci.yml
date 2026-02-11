@@ -21,4 +21,4 @@ jobs:
           PYTHONPATH: src
         run: python -m descriptorpin version
 
-# draft note 1719
+# draft note 1725
