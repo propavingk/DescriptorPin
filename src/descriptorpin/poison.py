@@ -176,3 +176,34 @@ _DETECTORS = (
 )
 
 
+@dataclass(frozen=True)
+class PoisonReport:
+    """The signals that fired for one description, and their total score."""
+
+    signals: tuple
+
+    @property
+    def score(self) -> int:
+        return sum(s.weight for s in self.signals)
+
+    @property
+    def fired(self) -> bool:
+        return bool(self.signals)
+
+
+def analyse(description: str) -> PoisonReport:
+    """Run every structural detector over a description.
+
+    Returns a PoisonReport listing the signals that fired, each named and
+    weighted. An empty report means no structural signal fired; it does not
+    mean the description is safe, only that these heuristics saw nothing.
+    """
+    signals = []
+    for detector in _DETECTORS:
+        result = detector(description)
+        if result is not None:
+            signals.append(result)
+    signals.sort(key=lambda s: (-s.weight, s.name))
+    return PoisonReport(signals=tuple(signals))
+
+# draft note 1727
