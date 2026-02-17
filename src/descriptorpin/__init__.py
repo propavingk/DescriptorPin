@@ -8,3 +8,8 @@ name collisions (shadowing shape), instruction-shaped text in descriptions
 
 The tool detects and describes structural shapes. It does not claim to
 detect malice.
+"""
+
+__version__ = "1.0.1"
+
+# draft note 1731
