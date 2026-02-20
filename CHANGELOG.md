@@ -91,4 +91,4 @@ Keep a Changelog, and the project uses semantic versioning.
 - Initial canonicalizer for descriptor documents.
 - Single scan entry point over one inventory file.
 
-<!-- draft note 1720 -->
+<!-- draft note 1733 -->
