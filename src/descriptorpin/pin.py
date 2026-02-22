@@ -141,3 +141,27 @@ def parse_pin(data: Any) -> PinFile:
             # A pin without a stored descriptor still verifies by hash; the
             # diff for such an entry can only report that the hash moved.
             descriptor = {"name": raw["name"], "description": "", "input_schema": {}}
+        tools.append(
+            PinnedTool(
+                key=raw["key"],
+                server=raw["server"],
+                name=raw["name"],
+                hash=raw["hash"],
+                descriptor=descriptor,
+                approved_by=raw.get("approved_by", "[UNSPECIFIED]"),
+                approved_note=raw.get("approved_note", ""),
+            )
+        )
+    tools.sort(key=lambda t: t.key)
+    return PinFile(format=fmt, tool_version=str(tool_version), tools=tuple(tools))
+
+
+def load_pin(path: str) -> PinFile:
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            data = json.load(handle)
+    except FileNotFoundError as exc:
+        raise PinError(f"pin file not found: {path}") from exc
+    except json.JSONDecodeError as exc:
+        raise PinError(f"pin file is not valid JSON: {exc}") from exc
+    return parse_pin(data)
