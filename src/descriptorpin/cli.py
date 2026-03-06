@@ -137,3 +137,32 @@ def _cmd_shadow(args) -> int:
     return EXIT_FINDINGS if shadow_items else EXIT_CLEAN
 
 
+def _cmd_version(_args) -> int:
+    print(f"descriptorpin {__version__}")
+    return EXIT_CLEAN
+
+
+_HANDLERS = {
+    "pin": _cmd_pin,
+    "scan": _cmd_scan,
+    "diff": _cmd_diff,
+    "shadow": _cmd_shadow,
+    "version": _cmd_version,
+}
+
+
+def main(argv=None) -> int:
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+    handler = _HANDLERS[args.command]
+    try:
+        return handler(args)
+    except (InventoryError, PinError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return EXIT_USAGE
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+# draft note 1738
