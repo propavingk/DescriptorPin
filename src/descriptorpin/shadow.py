@@ -53,3 +53,4 @@ def collisions(inventory: Inventory) -> list:
         servers = by_name[name]
         if len(servers) >= 2:
             found.append(Collision(name=name, servers=tuple(sorted(servers))))
+    return found
