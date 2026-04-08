@@ -205,5 +205,3 @@ def analyse(description: str) -> PoisonReport:
             signals.append(result)
     signals.sort(key=lambda s: (-s.weight, s.name))
     return PoisonReport(signals=tuple(signals))
-
-# draft note 1727
