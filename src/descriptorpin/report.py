@@ -102,4 +102,4 @@ def _clip(text: str, width: int = 88) -> str:
         return text
     return text[: width - 3] + "..."
 
-# draft note 1751
+# draft note 1756
