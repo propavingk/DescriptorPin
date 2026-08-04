@@ -27,3 +27,7 @@ Thumbs.db
 # Local scratch pins produced while trying the tool
 /tmp_pin.json
 *.local.json
+
+# Coverage output
+.coverage
+htmlcov/
