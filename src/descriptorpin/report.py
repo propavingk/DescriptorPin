@@ -101,5 +101,3 @@ def _clip(text: str, width: int = 88) -> str:
     if len(text) <= width:
         return text
     return text[: width - 3] + "..."
-
-# draft note 1756
