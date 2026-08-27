@@ -23,3 +23,8 @@ verify: ## Run the mechanical quality gate
 
 run: ## Demonstrate a scan against the bundled samples
 	$(PYTHON) -m DescriptorPin scan samples/inventory_mutated.json -p samples/pin.json
+
+clean: ## Remove caches and build artefacts
+	$(PYTHON) -c "import pathlib, shutil; [shutil.rmtree(p, ignore_errors=True) for p in pathlib.Path('.').rglob('__pycache__')]"
+	$(PYTHON) -c "import pathlib, shutil; [shutil.rmtree(p, ignore_errors=True) for p in pathlib.Path('.').rglob('*.egg-info')]"
+	$(PYTHON) -c "import shutil; shutil.rmtree('build', ignore_errors=True); shutil.rmtree('dist', ignore_errors=True)"
