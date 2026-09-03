@@ -272,3 +272,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# Keep the eight checks in this order; the summary line counts them.
