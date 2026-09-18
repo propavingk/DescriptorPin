@@ -1,7 +1,7 @@
 <div align="center">
 
-<img src="docs/assets/logo.svg" width="300"
-     alt="DescriptorPin wordmark beside a pinned descriptor card and a scanned card with a changed field highlighted" />
+<img src="docs/assets/banner.svg" width="100%"
+     alt="DescriptorPin banner: defensive integrity monitor for MCP tool descriptors, with a scan output card listing mutation, shadow, poison, and transport findings." />
 
 # DescriptorPin
 
